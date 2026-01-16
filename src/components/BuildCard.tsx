@@ -36,7 +36,18 @@ export const BuildCard: React.FC<BuildCardProps> = ({ data, id }) => {
         'geo': 'from-[#5e3c16] to-[#382010]', // Yellow/Earth (Medium)
     };
 
+    const elementBackgrounds: { [key: string]: string } = {
+        'pyro': '/bgImg/bg_Pyro.png',
+        'hydro': '/bgImg/bg_Hydro.png',
+        'anemo': '/bgImg/bg_Anemo.png',
+        'electro': '/bgImg/bg_Electro.png',
+        'dendro': '/bgImg/bg_Dendro.png',
+        'cryo': '/bgImg/bg_Cryo.png',
+        'geo': '/bgImg/bg_Geo.png',
+    };
+
     const bgGradient = elementColors[character.element] || 'from-[#1C1C22] to-[#2A2A35]';
+    const backgroundImage = elementBackgrounds[character.element];
 
     const getRankGradient = (label: string) => {
         switch (label) {
@@ -52,10 +63,16 @@ export const BuildCard: React.FC<BuildCardProps> = ({ data, id }) => {
         <div
             id={id}
             className={`w-[800px] h-[450px] bg-gradient-to-br ${bgGradient} text-[#ECE5D8] p-4 relative overflow-hidden shadow-2xl border border-[#4A4A55] rounded-lg font-[family-name:var(--font-noto-sans)] flex flex-col`}
+            style={backgroundImage ? {
+                backgroundImage: `url(${backgroundImage})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat'
+            } : {}}
         >
             {/* Background Decor */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-[rgba(234,179,8,0.05)] rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-[rgba(59,130,246,0.05)] rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[rgba(234,179,8,0.2)] rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-[rgba(59,130,246,0.1)] rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
 
             <div className="flex flex-col w-full h-full gap-1.5 relative z-10">
                 {/* Top Section: Character, Stats, Weapon */}
