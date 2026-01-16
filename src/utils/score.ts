@@ -54,8 +54,8 @@ export const getArtifactRank = (score: number, slot: string): { label: string, c
 };
 
 export const getTotalScoreRank = (totalScore: number): { label: string, color: string } => {
-    if (totalScore >= 200) return { label: 'SS', color: '#ff4d4d' };
-    if (totalScore >= 180) return { label: 'S', color: '#ff8c1a' };
-    if (totalScore >= 150) return { label: 'A', color: '#e6e600' };
+    if (totalScore >= 220) return { label: 'SS', color: '#ff4d4d' };
+    if (totalScore >= 200) return { label: 'S', color: '#ff8c1a' };
+    if (totalScore >= 180) return { label: 'A', color: '#e6e600' };
     return { label: 'B', color: '#999999' };
 };

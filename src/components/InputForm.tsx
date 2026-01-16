@@ -276,6 +276,22 @@ export const InputForm: React.FC<InputFormProps> = ({ data, onChange }) => {
                     <Input label="Name" value={data.character.name} onChange={(v) => updateCharacter("name", v)} />
                     <Input label="Level" type="number" value={data.character.level} onChange={(v) => updateCharacter("level", parseInt(v))} />
                     <Input label="Constellation" type="number" value={data.character.constellation} onChange={(v) => updateCharacter("constellation", parseInt(v))} />
+                    <div className="flex flex-col gap-1">
+                        <label className="text-xs text-gray-400">Element</label>
+                        <select
+                            value={data.character.element}
+                            onChange={(e) => updateCharacter("element", e.target.value as any)}
+                            className="bg-[#15151A] border border-[#3A3A45] rounded px-2 py-1 text-sm focus:border-[#D4AF37] outline-none transition-colors h-[30px]"
+                        >
+                            <option value="pyro">Pyro (炎)</option>
+                            <option value="hydro">Hydro (水)</option>
+                            <option value="anemo">Anemo (風)</option>
+                            <option value="electro">Electro (雷)</option>
+                            <option value="dendro">Dendro (草)</option>
+                            <option value="cryo">Cryo (氷)</option>
+                            <option value="geo">Geo (岩)</option>
+                        </select>
+                    </div>
                     <Input label="Image URL" value={data.character.imageUrl || ""} onChange={(v) => updateCharacter("imageUrl", v)} />
                 </div>
             </section>

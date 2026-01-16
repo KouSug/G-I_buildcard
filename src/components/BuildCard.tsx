@@ -38,6 +38,16 @@ export const BuildCard: React.FC<BuildCardProps> = ({ data, id }) => {
 
     const bgGradient = elementColors[character.element] || 'from-[#1C1C22] to-[#2A2A35]';
 
+    const getRankGradient = (label: string) => {
+        switch (label) {
+            case 'SS': return 'linear-gradient(to bottom, #ff4d4d, #ff1a1a)';
+            case 'S': return 'linear-gradient(to bottom, #ff8c1a, #ffb31a)';
+            case 'A': return 'linear-gradient(to bottom, #e6e600, #ffff00)';
+            case 'B': return 'linear-gradient(to bottom, #999999, #cccccc)';
+            default: return 'linear-gradient(to bottom, #ffffff, #cccccc)';
+        }
+    };
+
     return (
         <div
             id={id}
@@ -178,7 +188,13 @@ export const BuildCard: React.FC<BuildCardProps> = ({ data, id }) => {
                                         </span>
                                         <span
                                             className="text-sm font-bold px-2 py-0.5 rounded leading-tight"
-                                            style={{ backgroundColor: `${rank.color}33`, color: rank.color, border: `1px solid ${rank.color}66` }}
+                                            style={{
+                                                background: getRankGradient(rank.label),
+                                                WebkitBackgroundClip: 'text',
+                                                WebkitTextFillColor: 'transparent',
+                                                backgroundColor: `${rank.color}22`,
+                                                border: `1px solid ${rank.color}44`
+                                            }}
                                         >
                                             {rank.label}
                                         </span>
@@ -197,7 +213,7 @@ export const BuildCard: React.FC<BuildCardProps> = ({ data, id }) => {
                         return (
                             <div key={idx} className="bg-[#15151A]/30 rounded border border-[#3A3A45]/50 p-2 flex flex-col gap-1 relative group min-h-0">
                                 {/* Icon Background */}
-                                <div className="absolute top-[-10%] left-[-10%] w-24 h-24 opacity-25 pointer-events-none z-0">
+                                <div className="absolute top-[-10%] left-[-10%] w-24 h-24 opacity-25 pointer-events-none z-20">
                                     {artifact.imageUrl ? (
                                         <div
                                             className="w-full h-full bg-cover bg-center"
@@ -212,26 +228,32 @@ export const BuildCard: React.FC<BuildCardProps> = ({ data, id }) => {
                                 {/* Header: Main Stat */}
                                 <div className="flex items-center justify-end border-b border-[#3A3A45]/50 pb-1 mb-0.5 relative z-10">
                                     <div className="flex flex-col items-end">
-                                        <span className="text-[10px] font-bold text-[#D4AF37] truncate leading-tight font-[family-name:var(--font-sawarabi)]">{artifact.mainStat.label}</span>
-                                        <span className="text-xs font-bold leading-none font-[family-name:var(--font-inter)]">{artifact.mainStat.value}</span>
+                                        <span className="text-xs font-bold text-[#D4AF37] truncate leading-tight font-[family-name:var(--font-sawarabi)]">{artifact.mainStat.label}</span>
+                                        <span className="text-[20px] font-bold leading-none font-[family-name:var(--font-inter)]">{artifact.mainStat.value}</span>
                                     </div>
                                 </div>
 
                                 {/* Score & Rank */}
                                 <div className="flex items-center justify-between bg-[#15151A]/40 rounded px-1.5 py-0.5 mb-1 relative z-10">
                                     <span
-                                        className="text-xs font-bold px-1 rounded-sm leading-tight"
-                                        style={{ backgroundColor: `${rank.color}33`, color: rank.color, border: `1px solid ${rank.color}66` }}
+                                        className="text-sm font-bold px-1 rounded-sm leading-tight"
+                                        style={{
+                                            background: getRankGradient(rank.label),
+                                            WebkitBackgroundClip: 'text',
+                                            WebkitTextFillColor: 'transparent',
+                                            backgroundColor: `${rank.color}22`,
+                                            border: `1px solid ${rank.color}44`
+                                        }}
                                     >
                                         {rank.label}
                                     </span>
-                                    <span className="text-sm text-[#eab308] font-[family-name:var(--font-inter)] font-bold">
+                                    <span className="text-base text-[#eab308] font-[family-name:var(--font-inter)] font-bold">
                                         {score.toFixed(1)}
                                     </span>
                                 </div>
 
                                 {/* Sub Stats */}
-                                <div className="flex flex-col gap-0.5 text-[10px] leading-tight flex-grow justify-center relative z-10">
+                                <div className="flex flex-col gap-0.5 text-[10.5px] leading-tight flex-grow justify-center relative z-10">
                                     {artifact.subStats.map((sub, sIdx) => {
                                         let isHighlight = false;
                                         const scoreBase = data.scoreBase || 'atk';
