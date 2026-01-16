@@ -49,15 +49,27 @@ export const BuildCard: React.FC<BuildCardProps> = ({ data, id }) => {
     const bgGradient = elementColors[character.element] || 'from-[#1C1C22] to-[#2A2A35]';
     const backgroundImage = elementBackgrounds[character.element];
 
-    const getRankGradient = (label: string) => {
-        switch (label) {
-            case 'SS': return 'linear-gradient(to bottom, #ff4d4d, #ff1a1a)';
-            case 'S': return 'linear-gradient(to bottom, #ff8c1a, #ffb31a)';
-            case 'A': return 'linear-gradient(to bottom, #e6e600, #ffff00)';
-            case 'B': return 'linear-gradient(to bottom, #999999, #cccccc)';
-            default: return 'linear-gradient(to bottom, #ffffff, #cccccc)';
+    const getWeaponRarityColor = (rarity: number = 0) => {
+        switch (rarity) {
+            case 1: return '#757575'; // Gray
+            case 2: return '#6ab48e'; // Green
+            case 3: return '#5aa5c8'; // Blue
+            case 4: return '#9d78b8'; // Purple
+            case 5: return '#cfaa52'; // Gold
+            default: return '#25252D'; // Default Dark
         }
     };
+
+    const getScoreBaseLabel = (base: string = 'atk') => {
+        switch (base) {
+            case 'hp': return 'HP換算';
+            case 'def': return '防御力換算';
+            case 'er': return '元チャ効率換算';
+            case 'atk': default: return '攻撃力換算';
+        }
+    };
+
+
 
     return (
         <div
@@ -135,7 +147,10 @@ export const BuildCard: React.FC<BuildCardProps> = ({ data, id }) => {
                     <div className="w-[28%] h-full flex flex-col gap-2 ml-4">
                         {/* Weapon Card */}
                         <div className="h-[45%] bg-[#15151A]/60 rounded-lg border border-[#3A3A45]/50 p-3 flex items-center gap-3 relative">
-                            <div className="w-16 h-16 bg-[#25252D] rounded border border-[#3A3A45] flex-shrink-0 overflow-hidden relative">
+                            <div
+                                className="w-16 h-16 rounded border border-[#3A3A45] flex-shrink-0 overflow-hidden relative"
+                                style={{ backgroundColor: getWeaponRarityColor(weapon.rarity || 0) }}
+                            >
                                 {weapon.imageUrl ? (
                                     <div
                                         className="w-full h-full bg-cover bg-center"
@@ -199,25 +214,24 @@ export const BuildCard: React.FC<BuildCardProps> = ({ data, id }) => {
                                 const totalScore = artifacts.reduce((acc, artifact) => acc + calculateArtifactScore(artifact, data.scoreBase), 0);
                                 const rank = getTotalScoreRank(totalScore);
                                 return (
-                                    <div className="flex items-center gap-3">
+                                    <div className="flex items-center gap-3 -mt-1">
                                         <span className="text-3xl font-bold text-[#eab308] font-[family-name:var(--font-inter)]">
                                             {totalScore.toFixed(1)}
                                         </span>
-                                        <span
-                                            className="text-sm font-bold px-2 py-0.5 rounded leading-tight"
-                                            style={{
-                                                background: getRankGradient(rank.label),
-                                                WebkitBackgroundClip: 'text',
-                                                WebkitTextFillColor: 'transparent',
-                                                backgroundColor: `${rank.color}22`,
-                                                border: `1px solid ${rank.color}44`
-                                            }}
-                                        >
-                                            {rank.label}
-                                        </span>
+                                        <div className="h-10 w-auto flex items-center justify-center">
+                                            <img
+                                                src={`/rankImg/${rank.label}.png`}
+                                                alt={rank.label}
+                                                className="h-full w-auto object-contain"
+                                                crossOrigin="anonymous"
+                                            />
+                                        </div>
                                     </div>
                                 );
                             })()}
+                            <span className="text-xs text-[#d1d5db] -mt-2 font-[family-name:var(--font-sawarabi)]">
+                                {getScoreBaseLabel(data.scoreBase)}
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -252,18 +266,14 @@ export const BuildCard: React.FC<BuildCardProps> = ({ data, id }) => {
 
                                 {/* Score & Rank */}
                                 <div className="flex items-center justify-between bg-[#15151A]/40 rounded px-1.5 py-0.5 mb-1 relative z-10">
-                                    <span
-                                        className="text-sm font-bold px-1 rounded-sm leading-tight"
-                                        style={{
-                                            background: getRankGradient(rank.label),
-                                            WebkitBackgroundClip: 'text',
-                                            WebkitTextFillColor: 'transparent',
-                                            backgroundColor: `${rank.color}22`,
-                                            border: `1px solid ${rank.color}44`
-                                        }}
-                                    >
-                                        {rank.label}
-                                    </span>
+                                    <div className="h-6 w-auto flex items-center justify-center">
+                                        <img
+                                            src={`/rankImg/${rank.label}.png`}
+                                            alt={rank.label}
+                                            className="h-full w-auto object-contain"
+                                            crossOrigin="anonymous"
+                                        />
+                                    </div>
                                     <span className="text-base text-[#eab308] font-[family-name:var(--font-inter)] font-bold">
                                         {score.toFixed(1)}
                                     </span>
@@ -295,7 +305,7 @@ export const BuildCard: React.FC<BuildCardProps> = ({ data, id }) => {
                                         }
 
                                         return (
-                                            <div key={sIdx} className={`flex justify-between ${isHighlight ? "text-[#ECE5D8]" : "text-[#9ca3af]"} font-bold font-[family-name:var(--font-sawarabi)]`}>
+                                            <div key={sIdx} className={`flex justify-between ${isHighlight ? "text-[#ECE5D8]" : "text-[#d1d5db]"} font-bold font-[family-name:var(--font-sawarabi)]`}>
                                                 <span>{sub.label === '元素チャージ効率' ? '元チャ効率' : sub.label}</span>
                                                 <span className="font-[family-name:var(--font-inter)]">+{sub.value}</span>
                                             </div>

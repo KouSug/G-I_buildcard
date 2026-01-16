@@ -18,14 +18,15 @@ interface InputFormProps {
     onChange: (data: BuildData) => void;
 }
 
-const Input = ({ label, value, onChange, type = "text" }: { label: string, value: string | number, onChange: (v: string) => void, type?: string }) => (
+const Input = ({ label, value, onChange, type = "text", ...props }: { label: string, value: string | number, onChange: (v: string) => void, type?: string } & Omit<React.InputHTMLAttributes<HTMLInputElement>, 'onChange' | 'value'>) => (
     <div className="flex flex-col gap-1">
         <label className="text-xs text-gray-400">{label}</label>
         <input
+            {...props}
             type={type}
             value={value}
             onChange={(e) => onChange(e.target.value)}
-            className="bg-[#15151A] border border-[#3A3A45] rounded px-2 py-1 text-sm focus:border-[#D4AF37] outline-none transition-colors"
+            className={`bg-[#15151A] border border-[#3A3A45] rounded px-2 py-1 text-sm focus:border-[#D4AF37] outline-none transition-colors ${props.className || ''}`}
         />
     </div>
 );
@@ -35,6 +36,7 @@ export const InputForm: React.FC<InputFormProps> = ({ data, onChange }) => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
     const [enkaData, setEnkaData] = useState<EnkaNetworkResponse | null>(null);
+    const [isComposing, setIsComposing] = useState(false);
 
     const fetchEnkaData = async () => {
         if (!uid) return;
@@ -228,7 +230,33 @@ export const InputForm: React.FC<InputFormProps> = ({ data, onChange }) => {
             <section>
                 <h3 className="text-xl font-bold mb-4 text-[#D4AF37] border-b border-[#3A3A45] pb-2">Import from Enka.Network</h3>
                 <div className="flex gap-2 items-end mb-4">
-                    <Input label="UID" value={uid} onChange={setUid} />
+                    <Input
+                        label="UID"
+                        value={uid}
+                        className="[ime-mode:disabled]"
+                        autoComplete="off"
+                        onChange={(v) => {
+                            if (isComposing) {
+                                setUid(v);
+                                return;
+                            }
+                            // Convert full-width to half-width and strip non-alphanumeric
+                            const cleaned = v
+                                .replace(/[Ａ-Ｚａ-ｚ０-９]/g, (s) => String.fromCharCode(s.charCodeAt(0) - 0xFEE0))
+                                .replace(/[^a-zA-Z0-9]/g, '');
+                            setUid(cleaned);
+                        }}
+                        onCompositionStart={() => setIsComposing(true)}
+                        onCompositionEnd={(e: React.CompositionEvent<HTMLInputElement>) => {
+                            setIsComposing(false);
+                            const v = e.currentTarget.value;
+                            const cleaned = v
+                                .replace(/[Ａ-Ｚａ-ｚ０-９]/g, (s) => String.fromCharCode(s.charCodeAt(0) - 0xFEE0))
+                                .replace(/[^a-zA-Z0-9]/g, '');
+                            setUid(cleaned);
+                        }}
+                        placeholder="Enter UID (Alphanumeric)"
+                    />
                     <button
                         onClick={fetchEnkaData}
                         disabled={loading}
