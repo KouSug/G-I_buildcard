@@ -230,7 +230,7 @@ export const BuildCard: React.FC<BuildCardProps> = ({ data, id }) => {
                         return (
                             <div key={idx} className="bg-[#15151A]/30 rounded border border-[#3A3A45]/50 p-2 flex flex-col gap-1 relative group min-h-0">
                                 {/* Icon Background */}
-                                <div className="absolute top-[-10%] left-[-10%] w-24 h-24 opacity-25 pointer-events-none z-20">
+                                <div className="absolute top-[-10%] left-[-10%] w-24 h-24 scale-90 opacity-70 pointer-events-none z-0">
                                     {artifact.imageUrl ? (
                                         <div
                                             className="w-full h-full bg-cover bg-center"
