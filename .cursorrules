@@ -1,0 +1,41 @@
+# Genshin Build Card Creator - Project Context & Rules
+
+このプロジェクトは、原神（Genshin Impact）のキャラクタービルドカードを生成するためのWebアプリケーションです。
+
+## 技術スタック
+- **Framework**: Next.js 15+ (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS 4.0
+- **Icons**: Lucide React
+- **Image Generation**: html-to-image, html2canvas
+- **API Integration**: Enka.Network (via Proxy)
+
+## 設計方針
+- **Visual Excellence**: ユーザーを驚かせるようなプレミアムでモダンなデザイン（グラデーション、ダークモード、ガラスモーフィズム、マイクロアニメーション）を重視。
+- **Responsive Design**: プレビューエリアはスケーリングを使用して、異なる画面サイズでもカードのレイアウトを維持。
+- **Component-Based**: UI要素は再利用可能なコンポーネントとして分割（BuildCard, InputForm, StatRow, TalentDisplay等）。
+- **Data-Driven**: Enka.Network APIからのデータをマッピングし、自動入力と手動編集の両方をサポート。
+
+## 現在の実装状況
+- [x] 基本的なプロジェクト構成（Next.js + Tailwind CSS）
+- [x] ビルドカードのプレビュー表示（BuildCard.tsx）
+- [x] 入力フォームの実装（InputForm.tsx）
+- [x] Enka.Network API プロキシとデータマッピング
+- [x] 聖遺物スコア計算ロジック（score.ts）
+- [x] カードの画像ダウンロード機能（html-to-image）
+- [x] 武器情報の詳細表示（精錬ランク、ステータス、レアリティ）
+- [x] 命ノ星座のアイコン表示
+- [x] 天賦レベルの表示
+
+## 今後のタスク
+- [ ] 聖遺物のセット効果アイコンの表示
+- [ ] キャラクター/武器の画像アセットの動的取得の最適化
+- [ ] 複数のスコア計算基準（HP型、防御型、熟知型など）のユーザー選択機能の強化
+- [ ] カードデザインのバリエーション追加
+- [ ] モバイル端末でのレイアウト最適化のさらなる改善
+
+## 開発ルール
+- **言語**: 日本語で思考し、日本語で応答すること。
+- **デザイン**: 常に「WOW」を感じさせるプレミアムなデザインを優先する。
+- **コード品質**: TypeScriptの型定義を厳格に行い、マジックナンバーを避ける。
+- **ファイル構成**: `src/components` にUI、`src/utils` にロジック、`src/types` に型定義を配置する。
