@@ -266,7 +266,7 @@ export const BuildCard: React.FC<BuildCardProps> = ({ data, id }) => {
 
                                 {/* Score & Rank */}
                                 <div className="flex items-center justify-between bg-[#15151A]/40 rounded px-1.5 py-0.5 mb-1 relative z-10">
-                                    <div className="h-6 w-auto flex items-center justify-center">
+                                    <div className="h-6 w-auto flex items-center justify-center mt-0.5">
                                         <img
                                             src={`/rankImg/${rank.label}.png`}
                                             alt={rank.label}

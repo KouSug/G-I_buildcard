@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { BuildData, Character, Weapon, Stats, Artifact, EnkaNetworkResponse, AvatarInfo } from "@/types";
 import gameDataRaw from "@/data/gameData.json";
+import rarityDataRaw from "@/data/rarityData.json";
 import { statMap, formatStatValue } from "@/utils/mappings";
 
 // Type assertion for gameData to avoid implicit any errors if strict mode is on
@@ -12,6 +13,9 @@ const gameData = gameDataRaw as unknown as {
     artifacts: { [key: string]: { name: string; icon: string; setId: number } };
     artifactSets: { [key: string]: string };
 };
+
+// Type assertion for rarityData
+const rarityData = rarityDataRaw as { [key: string]: string };
 
 interface InputFormProps {
     data: BuildData;
@@ -271,22 +275,31 @@ export const InputForm: React.FC<InputFormProps> = ({ data, onChange }) => {
                 {enkaData && enkaData.avatarInfoList && (
                     <div className="mt-4">
                         <p className="text-sm text-gray-400 mb-2">Select Character:</p>
-                        <div className="flex flex-wrap gap-1">
+                        <div className="grid grid-cols-12 gap-1">
                             {enkaData.avatarInfoList.map((avatar) => {
                                 const charInfo = gameData.characters[String(avatar.avatarId)];
                                 const isSelected = data.character.name === charInfo?.name;
+                                const rarity = rarityData[String(avatar.avatarId)];
+                                let bgColor = "bg-gray-800"; // Default
+                                if (rarity === "QUALITY_ORANGE" || rarity === "QUALITY_ORANGE_SP") {
+                                    bgColor = "bg-[#CA8427]"; // Gold/Orange 5*
+                                } else if (rarity === "QUALITY_PURPLE") {
+                                    bgColor = "bg-[#855CCC]"; // Purple 4*
+                                }
+
                                 return (
                                     <button
                                         key={avatar.avatarId}
                                         onClick={() => selectCharacter(avatar)}
-                                        className={`relative w-10 h-10 rounded-full overflow-hidden border-2 transition-all ${isSelected ? "border-[#D4AF37] scale-110" : "border-transparent hover:border-gray-500"
+                                        className={`relative w-full aspect-square rounded-full overflow-hidden border-2 transition-all ${isSelected ? "border-[#D4AF37] scale-110 z-10" : "border-transparent hover:border-gray-500 text-opacity-80"
                                             }`}
                                         title={charInfo?.name || String(avatar.avatarId)}
                                     >
+                                        <div className={`absolute inset-0 ${bgColor} opacity-80`} />
                                         <img
                                             src={charInfo?.icon ? `https://enka.network/ui/${charInfo.icon}.png` : ""}
                                             alt={charInfo?.name}
-                                            className="w-full h-full object-cover bg-gray-800"
+                                            className="absolute inset-0 w-full h-full object-cover"
                                             onError={(e) => (e.currentTarget.style.display = 'none')}
                                         />
                                     </button>
@@ -301,7 +314,43 @@ export const InputForm: React.FC<InputFormProps> = ({ data, onChange }) => {
             <section>
                 <h3 className="text-xl font-bold mb-4 text-[#D4AF37] border-b border-[#3A3A45] pb-2">Character Info</h3>
                 <div className="grid grid-cols-2 gap-4">
-                    <Input label="Name" value={data.character.name} onChange={(v) => updateCharacter("name", v)} />
+                    <div className="flex flex-col gap-1">
+                        <label className="text-xs text-gray-400">Name</label>
+                        <input
+                            list="character-names"
+                            type="text"
+                            value={data.character.name}
+                            onChange={(e) => {
+                                const name = e.target.value;
+                                const charEntry = Object.values(gameData.characters).find(c => c.name === name);
+
+                                let newCharacter = { ...data.character, name };
+
+                                if (charEntry) {
+                                    if (charEntry.element) {
+                                        newCharacter.element = charEntry.element as any;
+                                    }
+                                    if (charEntry.icon) {
+                                        newCharacter.imageUrl = `https://enka.network/ui/${charEntry.icon.replace("UI_AvatarIcon_", "UI_Gacha_AvatarImg_")}.png`;
+                                    }
+                                    if (charEntry.constellations) {
+                                        newCharacter.constellationIcons = charEntry.constellations.map(icon => `https://enka.network/ui/${icon}.png`);
+                                    }
+                                }
+
+                                onChange({ ...data, character: newCharacter });
+                            }}
+                            className="bg-[#15151A] border border-[#3A3A45] rounded px-2 py-1 text-sm focus:border-[#D4AF37] outline-none transition-colors"
+                        />
+                        <datalist id="character-names">
+                            {Object.values(gameData.characters)
+                                .sort((a, b) => a.name.localeCompare(b.name, 'ja'))
+                                .map((char) => (
+                                    <option key={char.name} value={char.name} />
+                                ))
+                            }
+                        </datalist>
+                    </div>
                     <Input label="Level" type="number" value={data.character.level} onChange={(v) => updateCharacter("level", parseInt(v))} />
                     <Input label="Constellation" type="number" value={data.character.constellation} onChange={(v) => updateCharacter("constellation", parseInt(v))} />
                     <div className="flex flex-col gap-1">
@@ -320,7 +369,7 @@ export const InputForm: React.FC<InputFormProps> = ({ data, onChange }) => {
                             <option value="geo">Geo (岩)</option>
                         </select>
                     </div>
-                    <Input label="Image URL" value={data.character.imageUrl || ""} onChange={(v) => updateCharacter("imageUrl", v)} />
+
                 </div>
             </section>
 
@@ -331,7 +380,7 @@ export const InputForm: React.FC<InputFormProps> = ({ data, onChange }) => {
                     <Input label="Weapon Name" value={data.weapon.name} onChange={(v) => updateWeapon("name", v)} />
                     <Input label="Level" type="number" value={data.weapon.level} onChange={(v) => updateWeapon("level", parseInt(v))} />
                     <Input label="Refinement" type="number" value={data.weapon.refinement} onChange={(v) => updateWeapon("refinement", parseInt(v))} />
-                    <Input label="Image URL" value={data.weapon.imageUrl || ""} onChange={(v) => updateWeapon("imageUrl", v)} />
+
                 </div>
             </section>
 
