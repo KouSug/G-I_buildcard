@@ -7,7 +7,7 @@ import { BuildData } from "@/types";
 import { toPng } from 'html-to-image';
 import { Download, ChevronsRight, Settings2 } from "lucide-react";
 
-const INITIAL_DATA: BuildData = {
+export const INITIAL_DATA: BuildData = {
   character: {
     name: "",
     level: 1,
@@ -28,7 +28,7 @@ const INITIAL_DATA: BuildData = {
   },
   artifacts: [
     { slot: "flower", set: "", level: 0, rarity: 5, mainStat: { label: "HP", value: "0" }, subStats: [] },
-    { slot: "plume", set: "", level: 0, rarity: 5, mainStat: { label: "ATK", value: "0" }, subStats: [] },
+    { slot: "plume", set: "", level: 0, rarity: 5, mainStat: { label: "攻撃力", value: "0" }, subStats: [] },
     { slot: "sands", set: "", level: 0, rarity: 5, mainStat: { label: "Main", value: "0" }, subStats: [] },
     { slot: "goblet", set: "", level: 0, rarity: 5, mainStat: { label: "Main", value: "0" }, subStats: [] },
     { slot: "circlet", set: "", level: 0, rarity: 5, mainStat: { label: "Main", value: "0" }, subStats: [] },

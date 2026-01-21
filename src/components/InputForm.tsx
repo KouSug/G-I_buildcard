@@ -1,11 +1,14 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import { ChevronDown, Check, Star } from "lucide-react";
+import { ChevronDown, Check, Star, Trash2 } from "lucide-react";
 import { BuildData, Character, Weapon, Stats, Artifact, EnkaNetworkResponse, AvatarInfo } from "@/types";
 import gameDataRaw from "@/data/gameData.json";
 import rarityDataRaw from "@/data/rarityData.json";
+import artifactStatsRaw from "@/data/artifactMainStats.json";
 import { statMap, formatStatValue } from "@/utils/mappings";
+
+import { INITIAL_DATA } from "@/app/page";
 
 // Type assertion for gameData to avoid implicit any errors if strict mode is on
 const gameData = gameDataRaw as unknown as {
@@ -18,12 +21,70 @@ const gameData = gameDataRaw as unknown as {
 // Type assertion for rarityData
 const rarityData = rarityDataRaw as { [key: string]: string };
 
+// Type assertion for artifactStats
+const artifactStats = artifactStatsRaw as { [key: string]: { [rarity: string]: (string | null)[] } };
+
+const getArtifactMainStatValue = (label: string, rarity: number, level: number): string | null => {
+    // Attempt lookup directly first
+    let statKey = label;
+
+    // If not found, check if it's in our mapping via statMap (reverse lookup or direct?)
+    // The keys in artifactStats are mostly Japanese labels like '攻撃力', 'HP%', etc.
+    // statMap maps EN keys to JP text.
+    // If the label is valid JP text, it should be a key.
+
+    if (!artifactStats[statKey]) {
+        // Try to handle potentially missing % or slight variations if strictly needed,
+        // but for now assume exact match or fallback.
+        // Special case: 'Element Dmg' might be specific like '炎元素ダメージ' which IS in the json.
+        return null;
+    }
+
+    const rarityStr = String(rarity);
+    if (!artifactStats[statKey][rarityStr]) return null;
+
+    const values = artifactStats[statKey][rarityStr];
+    if (level < 0 || level >= values.length) return null;
+
+    let value = values[level];
+    if (value === null) return null;
+
+    // Auto-append % for percentage stats if not present
+    const nonPercentStats = ['HP', '攻撃力', '防御力', '元素熟知'];
+    if (!nonPercentStats.includes(label) && !value.endsWith('%')) {
+        // Double check if it looks like a number
+        if (!isNaN(parseFloat(value))) {
+            value += '%';
+        }
+    }
+
+    return value;
+};
+
 const slotLabels: { [key: string]: string } = {
     flower: "生の花",
     plume: "死の羽",
     sands: "時の砂",
     goblet: "空の杯",
     circlet: "理の冠"
+};
+
+const getArtifactImageUrl = (setName: string, slot: string) => {
+    const setId = Object.keys(gameData.artifactSets).find(key => gameData.artifactSets[key] === setName);
+    if (!setId) return undefined;
+
+    const suffixMap: { [key: string]: string } = {
+        flower: '_4',
+        plume: '_2',
+        sands: '_5',
+        goblet: '_1',
+        circlet: '_3'
+    };
+    const suffix = suffixMap[slot];
+    if (!suffix) return undefined;
+
+    const artifact = Object.values(gameData.artifacts).find(a => a.setId === parseInt(setId) && a.icon.endsWith(suffix));
+    return artifact?.icon ? `https://enka.network/ui/${artifact.icon}.png` : undefined;
 };
 
 interface InputFormProps {
@@ -307,6 +368,18 @@ export const InputForm: React.FC<InputFormProps> = ({ data, onChange }) => {
                     >
                         {loading ? "取得中..." : "データ取得"}
                     </button>
+                    <button
+                        onClick={() => {
+                            if (window.confirm("現在のデータをクリアして初期状態に戻しますか？")) {
+                                onChange(INITIAL_DATA);
+                                setUid("");
+                            }
+                        }}
+                        className="bg-[#1C1C22] border border-[#3A3A45] text-red-400 font-bold py-1 px-3 rounded h-[30px] hover:bg-[#2A2A35] transition-colors text-sm flex items-center justify-center"
+                        title="データをクリア"
+                    >
+                        <Trash2 size={16} />
+                    </button>
                 </div>
                 {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
 
@@ -378,6 +451,22 @@ export const InputForm: React.FC<InputFormProps> = ({ data, onChange }) => {
                                             if (charEntry.constellations) {
                                                 newCharacter.constellationIcons = charEntry.constellations.map(icon => `https://enka.network/ui/${icon}.png`);
                                             }
+                                            if (charEntry.skills) {
+                                                newCharacter.talents = {
+                                                    normal: {
+                                                        ...data.character.talents.normal,
+                                                        icon: charEntry.skills.normal?.icon ? `https://enka.network/ui/${charEntry.skills.normal.icon}.png` : ""
+                                                    },
+                                                    skill: {
+                                                        ...data.character.talents.skill,
+                                                        icon: charEntry.skills.skill?.icon ? `https://enka.network/ui/${charEntry.skills.skill.icon}.png` : ""
+                                                    },
+                                                    burst: {
+                                                        ...data.character.talents.burst,
+                                                        icon: charEntry.skills.burst?.icon ? `https://enka.network/ui/${charEntry.skills.burst.icon}.png` : ""
+                                                    },
+                                                };
+                                            }
                                         }
 
                                         onChange({ ...data, character: newCharacter });
@@ -422,6 +511,22 @@ export const InputForm: React.FC<InputFormProps> = ({ data, onChange }) => {
                                                     }
                                                     if (charEntry.constellations) {
                                                         newCharacter.constellationIcons = charEntry.constellations.map(icon => `https://enka.network/ui/${icon}.png`);
+                                                    }
+                                                    if (charEntry.skills) {
+                                                        newCharacter.talents = {
+                                                            normal: {
+                                                                ...data.character.talents.normal,
+                                                                icon: charEntry.skills.normal?.icon ? `https://enka.network/ui/${charEntry.skills.normal.icon}.png` : ""
+                                                            },
+                                                            skill: {
+                                                                ...data.character.talents.skill,
+                                                                icon: charEntry.skills.skill?.icon ? `https://enka.network/ui/${charEntry.skills.skill.icon}.png` : ""
+                                                            },
+                                                            burst: {
+                                                                ...data.character.talents.burst,
+                                                                icon: charEntry.skills.burst?.icon ? `https://enka.network/ui/${charEntry.skills.burst.icon}.png` : ""
+                                                            },
+                                                        };
                                                     }
 
                                                     onChange({ ...data, character: newCharacter });
@@ -500,6 +605,62 @@ export const InputForm: React.FC<InputFormProps> = ({ data, onChange }) => {
                         </select>
                     </div>
 
+                    <div className="col-span-2 mt-2">
+                        <label className="text-xs text-gray-400 mb-2 block">天賦 (通常 / スキル / 爆発)</label>
+                        <div className="flex gap-4 bg-[#1C1C22] p-3 rounded border border-[#3A3A45]">
+                            {(['normal', 'skill', 'burst'] as const).map((type) => {
+                                const talent = data.character.talents[type];
+                                const labels = { normal: "通常", skill: "スキル", burst: "爆発" };
+
+                                return (
+                                    <div key={type} className="flex-1 flex flex-col gap-2">
+                                        <div className="flex justify-between items-center">
+                                            <span className="text-xs text-gray-400">{labels[type]}</span>
+                                            <button
+                                                type="button"
+                                                onClick={() => {
+                                                    const newTalents = {
+                                                        ...data.character.talents,
+                                                        [type]: {
+                                                            ...talent,
+                                                            boosted: !talent.boosted
+                                                        }
+                                                    };
+                                                    onChange({ ...data, character: { ...data.character, talents: newTalents } });
+                                                }}
+                                                className={`text-[10px] px-1.5 py-0.5 rounded border transition-colors ${talent.boosted
+                                                    ? "bg-[#D4AF37] text-[#1C1C22] border-[#D4AF37] font-bold"
+                                                    : "bg-transparent text-gray-500 border-gray-600 hover:border-gray-400"
+                                                    }`}
+                                            >
+                                                Boost
+                                            </button>
+                                        </div>
+                                        <input
+                                            type="number"
+                                            value={talent.level}
+                                            onChange={(e) => {
+                                                const val = parseInt(e.target.value) || 1;
+                                                const newTalents = {
+                                                    ...data.character.talents,
+                                                    [type]: {
+                                                        ...talent,
+                                                        level: val
+                                                    }
+                                                };
+                                                onChange({ ...data, character: { ...data.character, talents: newTalents } });
+                                            }}
+                                            className={`w-full bg-[#15151A] border rounded px-2 py-1 text-sm outline-none transition-colors ${talent.boosted
+                                                ? "border-[#D4AF37] text-[#D4AF37]"
+                                                : "border-[#3A3A45] focus:border-[#D4AF37]"
+                                                }`}
+                                        />
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    </div>
+
                 </div>
             </section>
 
@@ -516,8 +677,19 @@ export const InputForm: React.FC<InputFormProps> = ({ data, onChange }) => {
                                     value={data.weapon.name}
                                     onFocus={() => setWeaponDropdownOpen(true)}
                                     onChange={(e) => {
-                                        updateWeapon("name", e.target.value);
+                                        const name = e.target.value;
+                                        updateWeapon("name", name);
                                         setWeaponDropdownOpen(true);
+
+                                        const weaponEntry = Object.values(gameData.weapons).find(w => w.name === name);
+                                        if (weaponEntry) {
+                                            if (weaponEntry.icon) {
+                                                updateWeapon("imageUrl", `https://enka.network/ui/${weaponEntry.icon}.png`);
+                                            }
+                                            if (weaponEntry.rarity) {
+                                                updateWeapon("rarity", weaponEntry.rarity);
+                                            }
+                                        }
                                     }}
                                     className="w-full bg-[#15151A] border border-[#3A3A45] rounded px-2 py-1 text-sm focus:border-[#D4AF37] outline-none transition-colors pr-8"
                                 />
@@ -566,6 +738,9 @@ export const InputForm: React.FC<InputFormProps> = ({ data, onChange }) => {
                                                     updateWeapon("name", weapon.name);
                                                     if (weapon.icon) {
                                                         updateWeapon("imageUrl", `https://enka.network/ui/${weapon.icon}.png`);
+                                                    }
+                                                    if (weapon.rarity) {
+                                                        updateWeapon("rarity", weapon.rarity);
                                                     }
                                                     setWeaponDropdownOpen(false);
                                                 }}
@@ -654,7 +829,9 @@ export const InputForm: React.FC<InputFormProps> = ({ data, onChange }) => {
                                                 onFocus={() => setOpenSetIndex(index)}
                                                 onChange={(e) => {
                                                     const newArtifacts = [...data.artifacts];
-                                                    newArtifacts[index] = { ...artifact, set: e.target.value };
+                                                    const newSet = e.target.value;
+                                                    const newImg = getArtifactImageUrl(newSet, artifact.slot);
+                                                    newArtifacts[index] = { ...artifact, set: newSet, imageUrl: newImg };
                                                     onChange({ ...data, artifacts: newArtifacts });
                                                     setOpenSetIndex(index);
                                                 }}
@@ -688,7 +865,8 @@ export const InputForm: React.FC<InputFormProps> = ({ data, onChange }) => {
                                                             className={`px-3 py-2 text-xs cursor-pointer hover:bg-[#3A3A45] flex items-center justify-between ${setName === artifact.set ? "text-[#D4AF37]" : "text-gray-200"}`}
                                                             onClick={() => {
                                                                 const newArtifacts = [...data.artifacts];
-                                                                newArtifacts[index] = { ...artifact, set: setName };
+                                                                const newImg = getArtifactImageUrl(setName, artifact.slot);
+                                                                newArtifacts[index] = { ...artifact, set: setName, imageUrl: newImg };
                                                                 onChange({ ...data, artifacts: newArtifacts });
                                                                 setOpenSetIndex(null);
                                                             }}
@@ -711,7 +889,19 @@ export const InputForm: React.FC<InputFormProps> = ({ data, onChange }) => {
                                                 type="button"
                                                 onClick={() => {
                                                     const newArtifacts = [...data.artifacts];
-                                                    newArtifacts[index] = { ...artifact, rarity: star };
+
+                                                    // Calculate new main stat value if possible
+                                                    const newVal = getArtifactMainStatValue(artifact.mainStat.label, star, artifact.level);
+
+                                                    newArtifacts[index] = {
+                                                        ...artifact,
+                                                        rarity: star,
+                                                        mainStat: {
+                                                            ...artifact.mainStat,
+                                                            // If we found a valid value, use it. Otherwise keep the old one (or user can edit).
+                                                            value: newVal !== null ? newVal : artifact.mainStat.value
+                                                        }
+                                                    };
                                                     onChange({ ...data, artifacts: newArtifacts });
                                                 }}
                                                 className="transition-transform hover:scale-110 focus:outline-none"
@@ -727,14 +917,140 @@ export const InputForm: React.FC<InputFormProps> = ({ data, onChange }) => {
                                 </div>
                                 <Input label="レベル" type="number" value={artifact.level} onChange={(v) => {
                                     const newArtifacts = [...data.artifacts];
-                                    newArtifacts[index] = { ...artifact, level: parseInt(v) };
+                                    const newLevel = parseInt(v) || 0;
+
+                                    // Calculate new main stat value if possible
+                                    const newVal = getArtifactMainStatValue(artifact.mainStat.label, artifact.rarity || 5, newLevel);
+
+                                    newArtifacts[index] = {
+                                        ...artifact,
+                                        level: newLevel,
+                                        mainStat: {
+                                            ...artifact.mainStat,
+                                            value: newVal !== null ? newVal : artifact.mainStat.value
+                                        }
+                                    };
+
                                     onChange({ ...data, artifacts: newArtifacts });
                                 }} />
-                                <Input label="メイン効果" value={artifact.mainStat.label} onChange={(v) => {
-                                    const newArtifacts = [...data.artifacts];
-                                    newArtifacts[index] = { ...artifact, mainStat: { ...artifact.mainStat, label: v } };
-                                    onChange({ ...data, artifacts: newArtifacts });
-                                }} />
+                                {artifact.slot === 'sands' ? (
+                                    <div className="flex flex-col gap-1">
+                                        <label className="text-xs text-gray-400">メイン効果</label>
+                                        <select
+                                            value={artifact.mainStat.label}
+                                            onChange={(e) => {
+                                                const v = e.target.value;
+                                                const newVal = getArtifactMainStatValue(v, artifact.rarity || 5, artifact.level);
+
+                                                const newArtifacts = [...data.artifacts];
+                                                newArtifacts[index] = {
+                                                    ...artifact,
+                                                    mainStat: {
+                                                        ...artifact.mainStat,
+                                                        label: v,
+                                                        value: newVal !== null ? newVal : artifact.mainStat.value
+                                                    }
+                                                };
+                                                onChange({ ...data, artifacts: newArtifacts });
+                                            }}
+                                            className="bg-[#15151A] border border-[#3A3A45] rounded px-2 py-1 text-sm focus:border-[#D4AF37] outline-none transition-colors h-[30px]"
+                                        >
+                                            <option value="攻撃力%">攻撃力%</option>
+                                            <option value="防御力%">防御力%</option>
+                                            <option value="HP%">HP%</option>
+                                            <option value="元素熟知">元素熟知</option>
+                                            <option value="元素チャージ効率">元素チャージ効率</option>
+                                        </select>
+                                    </div>
+                                ) : artifact.slot === 'goblet' ? (
+                                    <div className="flex flex-col gap-1">
+                                        <label className="text-xs text-gray-400">メイン効果</label>
+                                        <select
+                                            value={artifact.mainStat.label}
+                                            onChange={(e) => {
+                                                const v = e.target.value;
+                                                const newVal = getArtifactMainStatValue(v, artifact.rarity || 5, artifact.level);
+
+                                                const newArtifacts = [...data.artifacts];
+                                                newArtifacts[index] = {
+                                                    ...artifact,
+                                                    mainStat: {
+                                                        ...artifact.mainStat,
+                                                        label: v,
+                                                        value: newVal !== null ? newVal : artifact.mainStat.value
+                                                    }
+                                                };
+                                                onChange({ ...data, artifacts: newArtifacts });
+                                            }}
+                                            className="bg-[#15151A] border border-[#3A3A45] rounded px-2 py-1 text-sm focus:border-[#D4AF37] outline-none transition-colors h-[30px]"
+                                        >
+                                            <option value="攻撃力%">攻撃力%</option>
+                                            <option value="防御力%">防御力%</option>
+                                            <option value="HP%">HP%</option>
+                                            <option value="元素熟知">元素熟知</option>
+                                            <option value="炎元素ダメージ">炎元素ダメージ</option>
+                                            <option value="水元素ダメージ">水元素ダメージ</option>
+                                            <option value="風元素ダメージ">風元素ダメージ</option>
+                                            <option value="雷元素ダメージ">雷元素ダメージ</option>
+                                            <option value="草元素ダメージ">草元素ダメージ</option>
+                                            <option value="氷元素ダメージ">氷元素ダメージ</option>
+                                            <option value="岩元素ダメージ">岩元素ダメージ</option>
+                                            <option value="物理ダメージ">物理ダメージ</option>
+                                        </select>
+                                    </div>
+                                ) : artifact.slot === 'circlet' ? (
+                                    <div className="flex flex-col gap-1">
+                                        <label className="text-xs text-gray-400">メイン効果</label>
+                                        <select
+                                            value={artifact.mainStat.label}
+                                            onChange={(e) => {
+                                                const v = e.target.value;
+                                                const newVal = getArtifactMainStatValue(v, artifact.rarity || 5, artifact.level);
+
+                                                const newArtifacts = [...data.artifacts];
+                                                newArtifacts[index] = {
+                                                    ...artifact,
+                                                    mainStat: {
+                                                        ...artifact.mainStat,
+                                                        label: v,
+                                                        value: newVal !== null ? newVal : artifact.mainStat.value
+                                                    }
+                                                };
+                                                onChange({ ...data, artifacts: newArtifacts });
+                                            }}
+                                            className="bg-[#15151A] border border-[#3A3A45] rounded px-2 py-1 text-sm focus:border-[#D4AF37] outline-none transition-colors h-[30px]"
+                                        >
+                                            <option value="攻撃力%">攻撃力%</option>
+                                            <option value="防御力%">防御力%</option>
+                                            <option value="HP%">HP%</option>
+                                            <option value="元素熟知">元素熟知</option>
+                                            <option value="会心率">会心率</option>
+                                            <option value="会心ダメージ">会心ダメージ</option>
+                                            <option value="与える治癒効果">与える治癒効果</option>
+                                        </select>
+                                    </div>
+                                ) : (
+                                    <Input
+                                        label="メイン効果"
+                                        value={artifact.mainStat.label}
+                                        disabled={artifact.slot === 'flower' || artifact.slot === 'plume'}
+                                        onChange={(v) => {
+
+                                            // Calculate new main stat value if possible for the new label
+                                            const newVal = getArtifactMainStatValue(v, artifact.rarity || 5, artifact.level);
+
+                                            const newArtifacts = [...data.artifacts];
+                                            newArtifacts[index] = {
+                                                ...artifact,
+                                                mainStat: {
+                                                    ...artifact.mainStat,
+                                                    label: v,
+                                                    value: newVal !== null ? newVal : artifact.mainStat.value
+                                                }
+                                            };
+                                            onChange({ ...data, artifacts: newArtifacts });
+                                        }} />
+                                )}
                                 <Input label="メイン値" value={artifact.mainStat.value} onChange={(v) => {
                                     const newArtifacts = [...data.artifacts];
                                     newArtifacts[index] = { ...artifact, mainStat: { ...artifact.mainStat, value: v } };
@@ -744,30 +1060,54 @@ export const InputForm: React.FC<InputFormProps> = ({ data, onChange }) => {
                             <div className="mt-4">
                                 <label className="text-xs text-gray-400 mb-2 block">サブステータス</label>
                                 <div className="grid grid-cols-2 gap-2">
-                                    {artifact.subStats.map((sub, subIdx) => (
-                                        <div key={subIdx} className="flex gap-1">
-                                            <input
-                                                type="text"
-                                                value={sub.label}
-                                                onChange={(e) => {
-                                                    const newArtifacts = [...data.artifacts];
-                                                    newArtifacts[index].subStats[subIdx].label = e.target.value;
-                                                    onChange({ ...data, artifacts: newArtifacts });
-                                                }}
-                                                className="w-1/2 bg-[#1C1C22] border border-[#3A3A45] rounded px-2 py-1 text-xs outline-none focus:border-[#D4AF37]"
-                                            />
-                                            <input
-                                                type="text"
-                                                value={sub.value}
-                                                onChange={(e) => {
-                                                    const newArtifacts = [...data.artifacts];
-                                                    newArtifacts[index].subStats[subIdx].value = e.target.value;
-                                                    onChange({ ...data, artifacts: newArtifacts });
-                                                }}
-                                                className="w-1/2 bg-[#1C1C22] border border-[#3A3A45] rounded px-2 py-1 text-xs outline-none focus:border-[#D4AF37]"
-                                            />
-                                        </div>
-                                    ))}
+                                    {[0, 1, 2, 3].map((subIdx) => {
+                                        const sub = artifact.subStats[subIdx] || { label: '', value: '' };
+
+                                        return (
+                                            <div key={subIdx} className="flex gap-1">
+                                                <input
+                                                    type="text"
+                                                    value={sub.label}
+                                                    onChange={(e) => {
+                                                        const newArtifacts = [...data.artifacts];
+
+                                                        // Ensure subStats array has objects up to this index
+                                                        if (!newArtifacts[index].subStats) newArtifacts[index].subStats = [];
+                                                        for (let i = 0; i <= subIdx; i++) {
+                                                            if (!newArtifacts[index].subStats[i]) {
+                                                                newArtifacts[index].subStats[i] = { label: '', value: '' };
+                                                            }
+                                                        }
+
+                                                        newArtifacts[index].subStats[subIdx].label = e.target.value;
+                                                        onChange({ ...data, artifacts: newArtifacts });
+                                                    }}
+                                                    className="w-1/2 bg-[#1C1C22] border border-[#3A3A45] rounded px-2 py-1 text-xs outline-none focus:border-[#D4AF37]"
+                                                    placeholder="ステータス"
+                                                />
+                                                <input
+                                                    type="text"
+                                                    value={sub.value}
+                                                    onChange={(e) => {
+                                                        const newArtifacts = [...data.artifacts];
+
+                                                        // Ensure subStats array has objects up to this index
+                                                        if (!newArtifacts[index].subStats) newArtifacts[index].subStats = [];
+                                                        for (let i = 0; i <= subIdx; i++) {
+                                                            if (!newArtifacts[index].subStats[i]) {
+                                                                newArtifacts[index].subStats[i] = { label: '', value: '' };
+                                                            }
+                                                        }
+
+                                                        newArtifacts[index].subStats[subIdx].value = e.target.value;
+                                                        onChange({ ...data, artifacts: newArtifacts });
+                                                    }}
+                                                    className="w-1/2 bg-[#1C1C22] border border-[#3A3A45] rounded px-2 py-1 text-xs outline-none focus:border-[#D4AF37]"
+                                                    placeholder="値"
+                                                />
+                                            </div>
+                                        );
+                                    })}
                                 </div>
                             </div>
                         </div>
