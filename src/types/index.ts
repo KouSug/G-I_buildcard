@@ -35,6 +35,7 @@ export interface Artifact {
     subStats: { label: string; value: string }[];
     level: number;
     imageUrl?: string;
+    rarity?: number;
 }
 
 export interface Stats {

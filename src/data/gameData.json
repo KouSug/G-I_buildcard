@@ -22,7 +22,8 @@
         }
       },
       "constellations": [],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "10000002": {
       "name": "神里綾華",
@@ -53,7 +54,8 @@
         "UI_Talent_U_Ayaka_01",
         "UI_Talent_S_Ayaka_04"
       ],
-      "element": "cryo"
+      "element": "cryo",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "10000003": {
       "name": "ジン",
@@ -84,7 +86,8 @@
         "UI_Talent_U_Qin_01",
         "UI_Talent_S_Qin_04"
       ],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "10000005": {
       "name": "旅人",
@@ -101,7 +104,8 @@
         }
       },
       "constellations": [],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "10000006": {
       "name": "リサ",
@@ -132,7 +136,8 @@
         "UI_Talent_U_Lisa_01",
         "UI_Talent_S_Lisa_04"
       ],
-      "element": "electro"
+      "element": "electro",
+      "weaponType": "WEAPON_CATALYST"
     },
     "10000007": {
       "name": "旅人",
@@ -149,7 +154,8 @@
         }
       },
       "constellations": [],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "10000014": {
       "name": "バーバラ",
@@ -180,7 +186,8 @@
         "UI_Talent_U_Barbara_01",
         "UI_Talent_S_Barbara_04"
       ],
-      "element": "hydro"
+      "element": "hydro",
+      "weaponType": "WEAPON_CATALYST"
     },
     "10000015": {
       "name": "ガイア",
@@ -211,7 +218,8 @@
         "UI_Talent_U_Kaeya_02",
         "UI_Talent_S_Kaeya_04"
       ],
-      "element": "cryo"
+      "element": "cryo",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "10000016": {
       "name": "ディルック",
@@ -242,7 +250,8 @@
         "UI_Talent_U_Diluc_02",
         "UI_Talent_S_Diluc_04"
       ],
-      "element": "pyro"
+      "element": "pyro",
+      "weaponType": "WEAPON_CLAYMORE"
     },
     "10000020": {
       "name": "レザー",
@@ -273,7 +282,8 @@
         "UI_Talent_U_Razor_01",
         "UI_Talent_S_Razor_04"
       ],
-      "element": "electro"
+      "element": "electro",
+      "weaponType": "WEAPON_CLAYMORE"
     },
     "10000021": {
       "name": "アンバー",
@@ -304,7 +314,8 @@
         "UI_Talent_U_Ambor_01",
         "UI_Talent_S_Ambor_04"
       ],
-      "element": "pyro"
+      "element": "pyro",
+      "weaponType": "WEAPON_BOW"
     },
     "10000022": {
       "name": "ウェンティ",
@@ -335,7 +346,8 @@
         "UI_Talent_U_Venti_01",
         "UI_Talent_S_Venti_04"
       ],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_BOW"
     },
     "10000023": {
       "name": "香菱",
@@ -366,7 +378,8 @@
         "UI_Talent_U_Xiangling_01",
         "UI_Talent_S_Xiangling_04"
       ],
-      "element": "pyro"
+      "element": "pyro",
+      "weaponType": "WEAPON_POLE"
     },
     "10000024": {
       "name": "北斗",
@@ -397,7 +410,8 @@
         "UI_Talent_U_Beidou_02",
         "UI_Talent_S_Beidou_04"
       ],
-      "element": "electro"
+      "element": "electro",
+      "weaponType": "WEAPON_CLAYMORE"
     },
     "10000025": {
       "name": "行秋",
@@ -428,7 +442,8 @@
         "UI_Talent_U_Xingqiu_02",
         "UI_Talent_S_Xingqiu_04"
       ],
-      "element": "hydro"
+      "element": "hydro",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "10000026": {
       "name": "魈",
@@ -459,7 +474,8 @@
         "UI_Talent_U_Xiao_02",
         "UI_Talent_S_Xiao_04"
       ],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_POLE"
     },
     "10000027": {
       "name": "凝光",
@@ -490,7 +506,8 @@
         "UI_Talent_U_Ningguang_01",
         "UI_Talent_S_Ningguang_04"
       ],
-      "element": "geo"
+      "element": "geo",
+      "weaponType": "WEAPON_CATALYST"
     },
     "10000029": {
       "name": "クレー",
@@ -521,7 +538,8 @@
         "UI_Talent_U_Klee_02",
         "UI_Talent_S_Klee_04"
       ],
-      "element": "pyro"
+      "element": "pyro",
+      "weaponType": "WEAPON_CATALYST"
     },
     "10000030": {
       "name": "鍾離",
@@ -552,7 +570,8 @@
         "UI_Talent_U_Zhongli_02",
         "UI_Talent_S_Zhongli_04"
       ],
-      "element": "geo"
+      "element": "geo",
+      "weaponType": "WEAPON_POLE"
     },
     "10000031": {
       "name": "フィッシュル",
@@ -583,7 +602,8 @@
         "UI_Talent_U_Fischl_02",
         "UI_Talent_S_Fischl_04"
       ],
-      "element": "electro"
+      "element": "electro",
+      "weaponType": "WEAPON_BOW"
     },
     "10000032": {
       "name": "ベネット",
@@ -614,7 +634,8 @@
         "UI_Talent_U_Bennett_02",
         "UI_Talent_S_Bennett_04"
       ],
-      "element": "pyro"
+      "element": "pyro",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "10000033": {
       "name": "タルタリヤ",
@@ -645,7 +666,8 @@
         "UI_Talent_U_Tartaglia_02",
         "UI_Talent_S_Tartaglia_04"
       ],
-      "element": "hydro"
+      "element": "hydro",
+      "weaponType": "WEAPON_BOW"
     },
     "10000034": {
       "name": "ノエル",
@@ -676,7 +698,8 @@
         "UI_Talent_U_Noel_02",
         "UI_Talent_S_Noel_04"
       ],
-      "element": "geo"
+      "element": "geo",
+      "weaponType": "WEAPON_CLAYMORE"
     },
     "10000035": {
       "name": "七七",
@@ -707,7 +730,8 @@
         "UI_Talent_U_Qiqi_02",
         "UI_Talent_S_Qiqi_04"
       ],
-      "element": "cryo"
+      "element": "cryo",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "10000036": {
       "name": "重雲",
@@ -738,7 +762,8 @@
         "UI_Talent_U_Chongyun_02",
         "UI_Talent_S_Chongyun_04"
       ],
-      "element": "cryo"
+      "element": "cryo",
+      "weaponType": "WEAPON_CLAYMORE"
     },
     "10000037": {
       "name": "甘雨",
@@ -769,7 +794,8 @@
         "UI_Talent_U_Ganyu_02",
         "UI_Talent_S_Ganyu_04"
       ],
-      "element": "cryo"
+      "element": "cryo",
+      "weaponType": "WEAPON_BOW"
     },
     "10000038": {
       "name": "アルベド",
@@ -800,7 +826,8 @@
         "UI_Talent_U_Albedo_02",
         "UI_Talent_S_Albedo_04"
       ],
-      "element": "geo"
+      "element": "geo",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "10000039": {
       "name": "ディオナ",
@@ -831,7 +858,8 @@
         "UI_Talent_U_Diona_02",
         "UI_Talent_S_Diona_04"
       ],
-      "element": "cryo"
+      "element": "cryo",
+      "weaponType": "WEAPON_BOW"
     },
     "10000041": {
       "name": "モナ",
@@ -862,7 +890,8 @@
         "UI_Talent_U_Mona_02",
         "UI_Talent_S_Mona_04"
       ],
-      "element": "hydro"
+      "element": "hydro",
+      "weaponType": "WEAPON_CATALYST"
     },
     "10000042": {
       "name": "刻晴",
@@ -893,7 +922,8 @@
         "UI_Talent_U_Keqing_02",
         "UI_Talent_S_Keqing_04"
       ],
-      "element": "electro"
+      "element": "electro",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "10000043": {
       "name": "スクロース",
@@ -924,7 +954,8 @@
         "UI_Talent_U_Sucrose_02",
         "UI_Talent_S_Sucrose_04"
       ],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_CATALYST"
     },
     "10000044": {
       "name": "辛炎",
@@ -955,7 +986,8 @@
         "UI_Talent_U_Xinyan_02",
         "UI_Talent_S_Xinyan_04"
       ],
-      "element": "pyro"
+      "element": "pyro",
+      "weaponType": "WEAPON_CLAYMORE"
     },
     "10000045": {
       "name": "ロサリア",
@@ -986,7 +1018,8 @@
         "UI_Talent_U_Rosaria_02",
         "UI_Talent_S_Rosaria_04"
       ],
-      "element": "cryo"
+      "element": "cryo",
+      "weaponType": "WEAPON_POLE"
     },
     "10000046": {
       "name": "胡桃",
@@ -1017,7 +1050,8 @@
         "UI_Talent_U_Hutao_02",
         "UI_Talent_S_Hutao_04"
       ],
-      "element": "pyro"
+      "element": "pyro",
+      "weaponType": "WEAPON_POLE"
     },
     "10000047": {
       "name": "楓原万葉",
@@ -1048,7 +1082,8 @@
         "UI_Talent_U_Kazuha_02",
         "UI_Talent_S_Kazuha_04"
       ],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "10000048": {
       "name": "煙緋",
@@ -1079,7 +1114,8 @@
         "UI_Talent_U_Feiyan_02",
         "UI_Talent_S_Feiyan_04"
       ],
-      "element": "pyro"
+      "element": "pyro",
+      "weaponType": "WEAPON_CATALYST"
     },
     "10000049": {
       "name": "宵宮",
@@ -1110,7 +1146,8 @@
         "UI_Talent_U_Yoimiya_02",
         "UI_Talent_S_Yoimiya_04"
       ],
-      "element": "pyro"
+      "element": "pyro",
+      "weaponType": "WEAPON_BOW"
     },
     "10000050": {
       "name": "トーマ",
@@ -1141,7 +1178,8 @@
         "UI_Talent_U_Tohma_02",
         "UI_Talent_S_Tohma_04"
       ],
-      "element": "pyro"
+      "element": "pyro",
+      "weaponType": "WEAPON_POLE"
     },
     "10000051": {
       "name": "エウルア",
@@ -1172,7 +1210,8 @@
         "UI_Talent_U_Eula_02",
         "UI_Talent_S_Eula_04"
       ],
-      "element": "cryo"
+      "element": "cryo",
+      "weaponType": "WEAPON_CLAYMORE"
     },
     "10000052": {
       "name": "雷電将軍",
@@ -1203,7 +1242,8 @@
         "UI_Talent_U_Shougun_01",
         "UI_Talent_S_Shougun_04"
       ],
-      "element": "electro"
+      "element": "electro",
+      "weaponType": "WEAPON_POLE"
     },
     "10000053": {
       "name": "早柚",
@@ -1234,7 +1274,8 @@
         "UI_Talent_U_Sayu_01",
         "UI_Talent_S_Sayu_04"
       ],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_CLAYMORE"
     },
     "10000054": {
       "name": "珊瑚宮心海",
@@ -1265,7 +1306,8 @@
         "UI_Talent_U_Kokomi_01",
         "UI_Talent_S_Kokomi_04"
       ],
-      "element": "hydro"
+      "element": "hydro",
+      "weaponType": "WEAPON_CATALYST"
     },
     "10000055": {
       "name": "ゴロー",
@@ -1296,7 +1338,8 @@
         "UI_Talent_U_Gorou_02",
         "UI_Talent_S_Gorou_04"
       ],
-      "element": "geo"
+      "element": "geo",
+      "weaponType": "WEAPON_BOW"
     },
     "10000056": {
       "name": "九条裟羅",
@@ -1327,7 +1370,8 @@
         "UI_Talent_U_Sara_01",
         "UI_Talent_S_Sara_04"
       ],
-      "element": "electro"
+      "element": "electro",
+      "weaponType": "WEAPON_BOW"
     },
     "10000057": {
       "name": "荒瀧一斗",
@@ -1358,7 +1402,8 @@
         "UI_Talent_U_Itto_02",
         "UI_Talent_S_Itto_04"
       ],
-      "element": "geo"
+      "element": "geo",
+      "weaponType": "WEAPON_CLAYMORE"
     },
     "10000058": {
       "name": "八重神子",
@@ -1389,7 +1434,8 @@
         "UI_Talent_U_Yae_02",
         "UI_Talent_S_Yae_04"
       ],
-      "element": "electro"
+      "element": "electro",
+      "weaponType": "WEAPON_CATALYST"
     },
     "10000059": {
       "name": "鹿野院平蔵",
@@ -1420,7 +1466,8 @@
         "UI_Talent_U_Heizo_02",
         "UI_Talent_S_Heizo_04"
       ],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_CATALYST"
     },
     "10000060": {
       "name": "夜蘭",
@@ -1451,7 +1498,8 @@
         "UI_Talent_U_Yelan_02",
         "UI_Talent_S_Yelan_04"
       ],
-      "element": "hydro"
+      "element": "hydro",
+      "weaponType": "WEAPON_BOW"
     },
     "10000061": {
       "name": "綺良々",
@@ -1482,7 +1530,8 @@
         "UI_Talent_U_Momoka_02",
         "UI_Talent_S_Momoka_03"
       ],
-      "element": "dendro"
+      "element": "dendro",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "10000062": {
       "name": "アーロイ",
@@ -1513,7 +1562,8 @@
         "UI_Talent_S_Aloy_Lock",
         "UI_Talent_S_Aloy_Lock"
       ],
-      "element": "cryo"
+      "element": "cryo",
+      "weaponType": "WEAPON_BOW"
     },
     "10000063": {
       "name": "申鶴",
@@ -1544,7 +1594,8 @@
         "UI_Talent_U_Shenhe_02",
         "UI_Talent_S_Shenhe_04"
       ],
-      "element": "cryo"
+      "element": "cryo",
+      "weaponType": "WEAPON_POLE"
     },
     "10000064": {
       "name": "雲菫",
@@ -1575,7 +1626,8 @@
         "UI_Talent_U_Yunjin_02",
         "UI_Talent_S_Yunjin_04"
       ],
-      "element": "geo"
+      "element": "geo",
+      "weaponType": "WEAPON_POLE"
     },
     "10000065": {
       "name": "久岐忍",
@@ -1606,7 +1658,8 @@
         "UI_Talent_U_Shinobu_02",
         "UI_Talent_S_Shinobu_04"
       ],
-      "element": "electro"
+      "element": "electro",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "10000066": {
       "name": "神里綾人",
@@ -1637,7 +1690,8 @@
         "UI_Talent_U_Ayato_01",
         "UI_Talent_S_Ayato_04"
       ],
-      "element": "hydro"
+      "element": "hydro",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "10000067": {
       "name": "コレイ",
@@ -1668,7 +1722,8 @@
         "UI_Talent_U_Collei_01",
         "UI_Talent_S_Collei_04"
       ],
-      "element": "dendro"
+      "element": "dendro",
+      "weaponType": "WEAPON_BOW"
     },
     "10000068": {
       "name": "ドリー",
@@ -1699,7 +1754,8 @@
         "UI_Talent_U_Dori_01",
         "UI_Talent_S_Dori_04"
       ],
-      "element": "electro"
+      "element": "electro",
+      "weaponType": "WEAPON_CLAYMORE"
     },
     "10000069": {
       "name": "ティナリ",
@@ -1730,7 +1786,8 @@
         "UI_Talent_U_Tighnari_02",
         "UI_Talent_S_Tighnari_04"
       ],
-      "element": "dendro"
+      "element": "dendro",
+      "weaponType": "WEAPON_BOW"
     },
     "10000070": {
       "name": "ニィロウ",
@@ -1761,7 +1818,8 @@
         "UI_Talent_U_Nilou_02",
         "UI_Talent_S_Nilou_04"
       ],
-      "element": "hydro"
+      "element": "hydro",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "10000071": {
       "name": "セノ",
@@ -1792,7 +1850,8 @@
         "UI_Talent_U_Cyno_02",
         "UI_Talent_S_Cyno_04"
       ],
-      "element": "electro"
+      "element": "electro",
+      "weaponType": "WEAPON_POLE"
     },
     "10000072": {
       "name": "キャンディス",
@@ -1823,7 +1882,8 @@
         "UI_Talent_U_Candace_02",
         "UI_Talent_S_Candace_04"
       ],
-      "element": "hydro"
+      "element": "hydro",
+      "weaponType": "WEAPON_POLE"
     },
     "10000073": {
       "name": "ナヒーダ",
@@ -1854,7 +1914,8 @@
         "UI_Talent_U_Nahida_02",
         "UI_Talent_S_Nahida_04"
       ],
-      "element": "dendro"
+      "element": "dendro",
+      "weaponType": "WEAPON_CATALYST"
     },
     "10000074": {
       "name": "レイラ",
@@ -1885,7 +1946,8 @@
         "UI_Talent_U_Layla_02",
         "UI_Talent_S_Layla_04"
       ],
-      "element": "cryo"
+      "element": "cryo",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "10000075": {
       "name": "放浪者",
@@ -1916,7 +1978,8 @@
         "UI_Talent_U_Wanderer_01",
         "UI_Talent_S_Wanderer_04"
       ],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_CATALYST"
     },
     "10000076": {
       "name": "ファルザン",
@@ -1947,7 +2010,8 @@
         "UI_Talent_U_Faruzan_02",
         "UI_Talent_S_Faruzan_04"
       ],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_BOW"
     },
     "10000077": {
       "name": "ヨォーヨ",
@@ -1978,7 +2042,8 @@
         "UI_Talent_U_Yaoyao_02",
         "UI_Talent_S_Yaoyao_04"
       ],
-      "element": "dendro"
+      "element": "dendro",
+      "weaponType": "WEAPON_POLE"
     },
     "10000078": {
       "name": "アルハイゼン",
@@ -2009,7 +2074,8 @@
         "UI_Talent_U_Alhatham_02",
         "UI_Talent_S_Alhatham_04"
       ],
-      "element": "dendro"
+      "element": "dendro",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "10000079": {
       "name": "ディシア",
@@ -2040,7 +2106,8 @@
         "UI_Talent_U_Dehya_02",
         "UI_Talent_S_Dehya_04"
       ],
-      "element": "pyro"
+      "element": "pyro",
+      "weaponType": "WEAPON_CLAYMORE"
     },
     "10000080": {
       "name": "ミカ",
@@ -2071,7 +2138,8 @@
         "UI_Talent_U_Mika_02",
         "UI_Talent_S_Mika_04"
       ],
-      "element": "cryo"
+      "element": "cryo",
+      "weaponType": "WEAPON_POLE"
     },
     "10000081": {
       "name": "カーヴェ",
@@ -2102,7 +2170,8 @@
         "UI_Talent_U_Kaveh_01",
         "UI_Talent_S_Kaveh_04"
       ],
-      "element": "dendro"
+      "element": "dendro",
+      "weaponType": "WEAPON_CLAYMORE"
     },
     "10000082": {
       "name": "白朮",
@@ -2133,7 +2202,8 @@
         "UI_Talent_U_Baizhuer_02",
         "UI_Talent_S_Baizhuer_04"
       ],
-      "element": "dendro"
+      "element": "dendro",
+      "weaponType": "WEAPON_CATALYST"
     },
     "10000083": {
       "name": "リネット",
@@ -2164,7 +2234,8 @@
         "UI_Talent_U_Linette_02",
         "UI_Talent_S_Linette_04"
       ],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "10000084": {
       "name": "リネ",
@@ -2195,7 +2266,8 @@
         "UI_Talent_U_Liney_02",
         "UI_Talent_S_Liney_04"
       ],
-      "element": "pyro"
+      "element": "pyro",
+      "weaponType": "WEAPON_BOW"
     },
     "10000085": {
       "name": "フレミネ",
@@ -2226,7 +2298,8 @@
         "UI_Talent_U_Freminet_02",
         "UI_Talent_S_Freminet_04"
       ],
-      "element": "cryo"
+      "element": "cryo",
+      "weaponType": "WEAPON_CLAYMORE"
     },
     "10000086": {
       "name": "リオセスリ",
@@ -2257,7 +2330,8 @@
         "UI_Talent_U_Wriothesley_02",
         "UI_Talent_S_Wriothesley_04"
       ],
-      "element": "cryo"
+      "element": "cryo",
+      "weaponType": "WEAPON_CATALYST"
     },
     "10000087": {
       "name": "ヌヴィレット",
@@ -2288,7 +2362,8 @@
         "UI_Talent_U_Neuvillette_02",
         "UI_Talent_S_Neuvillette_04"
       ],
-      "element": "hydro"
+      "element": "hydro",
+      "weaponType": "WEAPON_CATALYST"
     },
     "10000088": {
       "name": "シャルロット",
@@ -2319,7 +2394,8 @@
         "UI_Talent_U_Charlotte_02",
         "UI_Talent_S_Charlotte_04"
       ],
-      "element": "cryo"
+      "element": "cryo",
+      "weaponType": "WEAPON_CATALYST"
     },
     "10000089": {
       "name": "フリーナ",
@@ -2350,7 +2426,8 @@
         "UI_Talent_U_Furina_01",
         "UI_Talent_S_Furina_02"
       ],
-      "element": "hydro"
+      "element": "hydro",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "10000090": {
       "name": "シュヴルーズ",
@@ -2381,7 +2458,8 @@
         "UI_Talent_U_Chevreuse_02",
         "UI_Talent_S_Chevreuse_04"
       ],
-      "element": "pyro"
+      "element": "pyro",
+      "weaponType": "WEAPON_POLE"
     },
     "10000091": {
       "name": "ナヴィア",
@@ -2412,7 +2490,8 @@
         "UI_Talent_U_Navia_02",
         "UI_Talent_S_Navia_04"
       ],
-      "element": "geo"
+      "element": "geo",
+      "weaponType": "WEAPON_CLAYMORE"
     },
     "10000092": {
       "name": "嘉明",
@@ -2443,7 +2522,8 @@
         "UI_Talent_U_Gaming_02",
         "UI_Talent_S_Gaming_04"
       ],
-      "element": "pyro"
+      "element": "pyro",
+      "weaponType": "WEAPON_CLAYMORE"
     },
     "10000093": {
       "name": "閑雲",
@@ -2474,7 +2554,8 @@
         "UI_Talent_U_Liuyun_01",
         "UI_Talent_S_Liuyun_04"
       ],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_CATALYST"
     },
     "10000094": {
       "name": "千織",
@@ -2505,7 +2586,8 @@
         "UI_Talent_U_Chiori_02",
         "UI_Talent_S_Chiori_04"
       ],
-      "element": "geo"
+      "element": "geo",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "10000095": {
       "name": "シグウィン",
@@ -2536,7 +2618,8 @@
         "UI_Talent_U_Sigewinne_02",
         "UI_Talent_S_Sigewinne_04"
       ],
-      "element": "hydro"
+      "element": "hydro",
+      "weaponType": "WEAPON_BOW"
     },
     "10000096": {
       "name": "アルレッキーノ",
@@ -2567,7 +2650,8 @@
         "UI_Talent_U_Arlecchino_02",
         "UI_Talent_S_Arlecchino_04"
       ],
-      "element": "pyro"
+      "element": "pyro",
+      "weaponType": "WEAPON_POLE"
     },
     "10000097": {
       "name": "セトス",
@@ -2598,7 +2682,8 @@
         "UI_Talent_U_Sethos_02",
         "UI_Talent_S_Sethos_04"
       ],
-      "element": "electro"
+      "element": "electro",
+      "weaponType": "WEAPON_BOW"
     },
     "10000098": {
       "name": "クロリンデ",
@@ -2629,7 +2714,8 @@
         "UI_Talent_U_Clorinde_01",
         "UI_Talent_S_Clorinde_04"
       ],
-      "element": "electro"
+      "element": "electro",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "10000099": {
       "name": "エミリエ",
@@ -2660,7 +2746,8 @@
         "UI_Talent_U_Emilie_02",
         "UI_Talent_S_Emilie_04"
       ],
-      "element": "dendro"
+      "element": "dendro",
+      "weaponType": "WEAPON_POLE"
     },
     "10000100": {
       "name": "カチーナ",
@@ -2691,7 +2778,8 @@
         "UI_Talent_U_Kachina_02",
         "UI_Talent_S_Kachina_04"
       ],
-      "element": "geo"
+      "element": "geo",
+      "weaponType": "WEAPON_POLE"
     },
     "10000101": {
       "name": "キィニチ",
@@ -2722,7 +2810,8 @@
         "UI_Talent_U_Kinich_02",
         "UI_Talent_S_Kinich_04"
       ],
-      "element": "dendro"
+      "element": "dendro",
+      "weaponType": "WEAPON_CLAYMORE"
     },
     "10000102": {
       "name": "ムアラニ",
@@ -2753,7 +2842,8 @@
         "UI_Talent_U_Mualani_02",
         "UI_Talent_S_Mualani_04"
       ],
-      "element": "hydro"
+      "element": "hydro",
+      "weaponType": "WEAPON_CATALYST"
     },
     "10000103": {
       "name": "シロネン",
@@ -2784,7 +2874,8 @@
         "UI_Talent_U_Xilonen_02",
         "UI_Talent_S_Xilonen_04"
       ],
-      "element": "geo"
+      "element": "geo",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "10000104": {
       "name": "チャスカ",
@@ -2815,7 +2906,8 @@
         "UI_Talent_U_Chasca_02",
         "UI_Talent_S_Chasca_04"
       ],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_BOW"
     },
     "10000105": {
       "name": "オロルン",
@@ -2846,7 +2938,8 @@
         "UI_Talent_U_Olorun_02",
         "UI_Talent_S_Olorun_04"
       ],
-      "element": "electro"
+      "element": "electro",
+      "weaponType": "WEAPON_BOW"
     },
     "10000106": {
       "name": "マーヴィカ",
@@ -2877,7 +2970,8 @@
         "UI_Talent_U_Mavuika_02",
         "UI_Talent_S_Mavuika_04"
       ],
-      "element": "pyro"
+      "element": "pyro",
+      "weaponType": "WEAPON_CLAYMORE"
     },
     "10000107": {
       "name": "シトラリ",
@@ -2908,7 +3002,8 @@
         "UI_Talent_U_Citlali_02",
         "UI_Talent_S_Citlali_04"
       ],
-      "element": "cryo"
+      "element": "cryo",
+      "weaponType": "WEAPON_CATALYST"
     },
     "10000108": {
       "name": "藍硯",
@@ -2939,7 +3034,8 @@
         "UI_Talent_U_Lanyan_02",
         "UI_Talent_S_Lanyan_04"
       ],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_CATALYST"
     },
     "10000109": {
       "name": "夢見月瑞希",
@@ -2970,7 +3066,8 @@
         "UI_Talent_U_Mizuki_02",
         "UI_Talent_S_Mizuki_04"
       ],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_CATALYST"
     },
     "10000110": {
       "name": "イアンサ",
@@ -3001,7 +3098,8 @@
         "UI_Talent_U_Iansan_02",
         "UI_Talent_S_Iansan_04"
       ],
-      "element": "electro"
+      "element": "electro",
+      "weaponType": "WEAPON_POLE"
     },
     "10000111": {
       "name": "ヴァレサ",
@@ -3032,7 +3130,8 @@
         "UI_Talent_U_Varesa_02",
         "UI_Talent_S_Varesa_04"
       ],
-      "element": "electro"
+      "element": "electro",
+      "weaponType": "WEAPON_CATALYST"
     },
     "10000112": {
       "name": "エスコフィエ",
@@ -3063,7 +3162,8 @@
         "UI_Talent_U_Escoffier_02",
         "UI_Talent_S_Escoffier_04"
       ],
-      "element": "cryo"
+      "element": "cryo",
+      "weaponType": "WEAPON_POLE"
     },
     "10000113": {
       "name": "イファ",
@@ -3094,7 +3194,8 @@
         "UI_Talent_U_Ifa_02",
         "UI_Talent_S_Ifa_04"
       ],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_CATALYST"
     },
     "10000114": {
       "name": "スカーク",
@@ -3125,7 +3226,8 @@
         "UI_Talent_U_SkirkNew_02",
         "UI_Talent_S_SkirkNew_04"
       ],
-      "element": "cryo"
+      "element": "cryo",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "10000115": {
       "name": "ダリア",
@@ -3156,7 +3258,8 @@
         "UI_Talent_U_Dahlia_02",
         "UI_Talent_S_Dahlia_04"
       ],
-      "element": "hydro"
+      "element": "hydro",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "10000116": {
       "name": "イネファ",
@@ -3187,7 +3290,8 @@
         "UI_Talent_U_Ineffa_02",
         "UI_Talent_S_Ineffa_04"
       ],
-      "element": "electro"
+      "element": "electro",
+      "weaponType": "WEAPON_POLE"
     },
     "10000117": {
       "name": "ドール（男）",
@@ -3204,7 +3308,8 @@
         }
       },
       "constellations": [],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "10000118": {
       "name": "ドール（女）",
@@ -3221,7 +3326,8 @@
         }
       },
       "constellations": [],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "10000119": {
       "name": "ラウマ",
@@ -3252,7 +3358,8 @@
         "UI_Talent_U_Lauma_02",
         "UI_Talent_S_Lauma_04"
       ],
-      "element": "dendro"
+      "element": "dendro",
+      "weaponType": "WEAPON_CATALYST"
     },
     "10000120": {
       "name": "フリンズ",
@@ -3283,7 +3390,8 @@
         "UI_Talent_U_Flins_01",
         "UI_Talent_S_Flins_04"
       ],
-      "element": "electro"
+      "element": "electro",
+      "weaponType": "WEAPON_POLE"
     },
     "10000121": {
       "name": "アイノ",
@@ -3314,7 +3422,8 @@
         "UI_Talent_U_Aino_02",
         "UI_Talent_S_Aino_04"
       ],
-      "element": "hydro"
+      "element": "hydro",
+      "weaponType": "WEAPON_CLAYMORE"
     },
     "10000122": {
       "name": "ネフェル",
@@ -3345,7 +3454,8 @@
         "UI_Talent_U_Nefer_02",
         "UI_Talent_S_Nefer_04"
       ],
-      "element": "dendro"
+      "element": "dendro",
+      "weaponType": "WEAPON_CATALYST"
     },
     "10000123": {
       "name": "ドゥリン",
@@ -3376,7 +3486,8 @@
         "UI_Talent_U_Durin_02",
         "UI_Talent_S_Durin_06"
       ],
-      "element": "pyro"
+      "element": "pyro",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "10000124": {
       "name": "ヤフォダ",
@@ -3407,7 +3518,8 @@
         "UI_Talent_U_Jahoda_02",
         "UI_Talent_S_Jahoda_04"
       ],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_BOW"
     },
     "10000125": {
       "name": "コロンビーナ",
@@ -3438,7 +3550,8 @@
         "UI_Talent_U_Columbina_02",
         "UI_Talent_S_Columbina_04"
       ],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_CATALYST"
     },
     "10000126": {
       "name": "兹白",
@@ -3469,7 +3582,8 @@
         "UI_Talent_U_Zibai_02",
         "UI_Talent_S_Zibai_04"
       ],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "10000127": {
       "name": "イルーガ",
@@ -3500,7 +3614,8 @@
         "UI_Talent_U_Illuga_02",
         "UI_Talent_S_Illuga_04"
       ],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_POLE"
     },
     "10000901": {
       "name": "マーヴィカ（お試し）",
@@ -3531,7 +3646,8 @@
         "UI_Talent_U_Xiangling_01",
         "UI_Talent_S_Xiangling_04"
       ],
-      "element": "pyro"
+      "element": "pyro",
+      "weaponType": "WEAPON_CLAYMORE"
     },
     "10000902": {
       "name": "胡桃（お試し）",
@@ -3562,7 +3678,8 @@
         "UI_Talent_U_Hutao_02",
         "UI_Talent_S_Hutao_04"
       ],
-      "element": "pyro"
+      "element": "pyro",
+      "weaponType": "WEAPON_POLE"
     },
     "10000903": {
       "name": "イネファ",
@@ -3593,7 +3710,8 @@
         "UI_Talent_U_Ineffa_02",
         "UI_Talent_S_Ineffa_04"
       ],
-      "element": "electro"
+      "element": "electro",
+      "weaponType": "WEAPON_POLE"
     },
     "10000904": {
       "name": "コロンビーナ",
@@ -3624,7 +3742,8 @@
         "UI_Talent_U_Xiangling_01",
         "UI_Talent_S_Xiangling_04"
       ],
-      "element": "pyro"
+      "element": "pyro",
+      "weaponType": "WEAPON_CATALYST"
     },
     "10000998": {
       "name": "UGC （正式・男性）",
@@ -3639,7 +3758,8 @@
         }
       },
       "constellations": [],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "10000999": {
       "name": "UGC （正式・女性）",
@@ -3654,7 +3774,8 @@
         }
       },
       "constellations": [],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "11000008": {
       "name": "テストチーム4",
@@ -3669,7 +3790,8 @@
         }
       },
       "constellations": [],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "11000009": {
       "name": "シーンテスト",
@@ -3684,7 +3806,8 @@
         }
       },
       "constellations": [],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "11000010": {
       "name": "モデル1",
@@ -3699,7 +3822,8 @@
         }
       },
       "constellations": [],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "11000011": {
       "name": "男性",
@@ -3716,7 +3840,8 @@
         }
       },
       "constellations": [],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "11000013": {
       "name": "マルチプレイテスト",
@@ -3731,7 +3856,8 @@
         }
       },
       "constellations": [],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "11000017": {
       "name": "成人男性ボディテスト",
@@ -3762,7 +3888,8 @@
         "UI_Talent_U_Kaeya_02",
         "UI_Talent_S_Kaeya_04"
       ],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "11000018": {
       "name": "成人女性ボディテスト",
@@ -3793,7 +3920,8 @@
         "UI_Talent_U_Kaeya_02",
         "UI_Talent_S_Kaeya_04"
       ],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "11000019": {
       "name": "少女ボディテスト",
@@ -3824,7 +3952,8 @@
         "UI_Talent_U_Kaeya_02",
         "UI_Talent_S_Kaeya_04"
       ],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "11000025": {
       "name": "アクリヤ",
@@ -3848,7 +3977,8 @@
         }
       },
       "constellations": [],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_BOW"
     },
     "11000026": {
       "name": "ヨォーヨ（テスト）",
@@ -3879,7 +4009,8 @@
         "UI_Talent_U_Kaeya_02",
         "UI_Talent_S_Kaeya_04"
       ],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_CATALYST"
     },
     "11000027": {
       "name": "少女ボディテスト 2号機",
@@ -3903,7 +4034,8 @@
         }
       },
       "constellations": [],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "11000028": {
       "name": "ホワイトボックス少女",
@@ -3927,7 +4059,8 @@
         }
       },
       "constellations": [],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_POLE"
     },
     "11000030": {
       "name": "大剣少女",
@@ -3949,7 +4082,8 @@
         "UI_Talent_U_Fischl_02",
         "UI_Talent_S_Fischl_04"
       ],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_CLAYMORE"
     },
     "11000031": {
       "name": "武器テストA",
@@ -3973,7 +4107,8 @@
         }
       },
       "constellations": [],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "11000032": {
       "name": "武器テストB",
@@ -3997,7 +4132,8 @@
         }
       },
       "constellations": [],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "11000033": {
       "name": "武器テストC",
@@ -4021,7 +4157,8 @@
         }
       },
       "constellations": [],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "11000035": {
       "name": "ランスの戦士",
@@ -4045,7 +4182,8 @@
         }
       },
       "constellations": [],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_POLE"
     },
     "11000036": {
       "name": "片手剣の女テスト",
@@ -4069,7 +4207,8 @@
         }
       },
       "constellations": [],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "11000037": {
       "name": "Rxホワイトボックス",
@@ -4093,7 +4232,8 @@
         }
       },
       "constellations": [],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_BOW"
     },
     "11000038": {
       "name": "少年ボディテスト",
@@ -4117,7 +4257,8 @@
         }
       },
       "constellations": [],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "11000039": {
       "name": "成人男性テスト",
@@ -4141,7 +4282,8 @@
         }
       },
       "constellations": [],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "11000040": {
       "name": "女性主人公通常攻撃",
@@ -4158,7 +4300,8 @@
         }
       },
       "constellations": [],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "11000041": {
       "name": "男性主人公通常攻撃",
@@ -4175,7 +4318,8 @@
         }
       },
       "constellations": [],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "11000042": {
       "name": "重雲（テスト）",
@@ -4199,7 +4343,8 @@
         }
       },
       "constellations": [],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "11000043": {
       "name": "お試しキャラ",
@@ -4230,7 +4375,8 @@
         "UI_Talent_U_Kaeya_02",
         "UI_Talent_S_Kaeya_04"
       ],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_CLAYMORE"
     },
     "11000044": {
       "name": "七七（テスト）",
@@ -4261,7 +4407,8 @@
         "UI_Talent_U_Kaeya_02",
         "UI_Talent_S_Kaeya_04"
       ],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "11000045": {
       "name": "ディオナ",
@@ -4292,7 +4439,8 @@
         "UI_Talent_U_Kaeya_02",
         "UI_Talent_S_Kaeya_04"
       ],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_BOW"
     },
     "11000046": {
       "name": "炎神",
@@ -4323,7 +4471,8 @@
         "UI_Talent_U_Kaeya_02",
         "UI_Talent_S_Kaeya_04"
       ],
-      "element": "cryo"
+      "element": "cryo",
+      "weaponType": "WEAPON_CLAYMORE"
     },
     "11000998": {
       "name": "UGC（テストキャラ・男性）",
@@ -4338,7 +4487,8 @@
         }
       },
       "constellations": [],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     },
     "11000999": {
       "name": "UGC（テストキャラ・女性）",
@@ -4353,993 +4503,1486 @@
         }
       },
       "constellations": [],
-      "element": "anemo"
+      "element": "anemo",
+      "weaponType": "WEAPON_SWORD_ONE_HAND"
     }
   },
   "weapons": {
     "11101": {
       "name": "無鋒の剣",
-      "icon": "UI_EquipIcon_Sword_Blunt"
+      "icon": "UI_EquipIcon_Sword_Blunt",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 1
     },
     "11201": {
       "name": "銀の剣",
-      "icon": "UI_EquipIcon_Sword_Silver"
+      "icon": "UI_EquipIcon_Sword_Silver",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 2
     },
     "11301": {
       "name": "冷刃",
-      "icon": "UI_EquipIcon_Sword_Steel"
+      "icon": "UI_EquipIcon_Sword_Steel",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 3
     },
     "11302": {
       "name": "黎明の神剣",
-      "icon": "UI_EquipIcon_Sword_Dawn"
+      "icon": "UI_EquipIcon_Sword_Dawn",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 3
     },
     "11303": {
       "name": "旅道の剣",
-      "icon": "UI_EquipIcon_Sword_Traveler"
+      "icon": "UI_EquipIcon_Sword_Traveler",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 3
     },
     "11304": {
       "name": "暗鉄剣",
-      "icon": "UI_EquipIcon_Sword_Darker"
+      "icon": "UI_EquipIcon_Sword_Darker",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 3
     },
     "11305": {
       "name": "チ虎魚の刀",
-      "icon": "UI_EquipIcon_Sword_Sashimi"
+      "icon": "UI_EquipIcon_Sword_Sashimi",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 3
     },
     "11306": {
       "name": "飛天御剣",
-      "icon": "UI_EquipIcon_Sword_Mitsurugi"
+      "icon": "UI_EquipIcon_Sword_Mitsurugi",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 3
     },
     "11401": {
       "name": "西風剣",
-      "icon": "UI_EquipIcon_Sword_Zephyrus"
+      "icon": "UI_EquipIcon_Sword_Zephyrus",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 4
     },
     "11402": {
       "name": "笛の剣",
-      "icon": "UI_EquipIcon_Sword_Troupe"
+      "icon": "UI_EquipIcon_Sword_Troupe",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 4
     },
     "11403": {
       "name": "祭礼の剣",
-      "icon": "UI_EquipIcon_Sword_Fossil"
+      "icon": "UI_EquipIcon_Sword_Fossil",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 4
     },
     "11404": {
       "name": "旧貴族長剣",
-      "icon": "UI_EquipIcon_Sword_Theocrat"
+      "icon": "UI_EquipIcon_Sword_Theocrat",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 4
     },
     "11405": {
       "name": "匣中龍吟",
-      "icon": "UI_EquipIcon_Sword_Rockkiller"
+      "icon": "UI_EquipIcon_Sword_Rockkiller",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 4
     },
     "11406": {
       "name": "斬岩·試作",
-      "icon": "UI_EquipIcon_Sword_Proto"
+      "icon": "UI_EquipIcon_Sword_Proto",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 4
     },
     "11407": {
       "name": "鉄蜂の刺し",
-      "icon": "UI_EquipIcon_Sword_Exotic"
+      "icon": "UI_EquipIcon_Sword_Exotic",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 4
     },
     "11408": {
       "name": "黒岩の長剣",
-      "icon": "UI_EquipIcon_Sword_Blackrock"
+      "icon": "UI_EquipIcon_Sword_Blackrock",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 4
     },
     "11409": {
       "name": "黒剣",
-      "icon": "UI_EquipIcon_Sword_Bloodstained"
+      "icon": "UI_EquipIcon_Sword_Bloodstained",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 4
     },
     "11410": {
       "name": "ダークアレイの閃光",
-      "icon": "UI_EquipIcon_Sword_Outlaw"
+      "icon": "UI_EquipIcon_Sword_Outlaw",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 4
     },
     "11412": {
       "name": "降臨の剣",
-      "icon": "UI_EquipIcon_Sword_Psalmus"
+      "icon": "UI_EquipIcon_Sword_Psalmus",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 4
     },
     "11413": {
       "name": "腐植の剣",
-      "icon": "UI_EquipIcon_Sword_Magnum"
+      "icon": "UI_EquipIcon_Sword_Magnum",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 4
     },
     "11414": {
       "name": "天目影打",
-      "icon": "UI_EquipIcon_Sword_Bakufu"
+      "icon": "UI_EquipIcon_Sword_Bakufu",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 4
     },
     "11415": {
       "name": "シナバースピンドル",
-      "icon": "UI_EquipIcon_Sword_Opus"
+      "icon": "UI_EquipIcon_Sword_Opus",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 4
     },
     "11416": {
       "name": "籠釣瓶一心",
-      "icon": "UI_EquipIcon_Sword_Youtou"
+      "icon": "UI_EquipIcon_Sword_Youtou",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 4
     },
     "11417": {
       "name": "原木刀",
-      "icon": "UI_EquipIcon_Sword_Arakalari"
+      "icon": "UI_EquipIcon_Sword_Arakalari",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 4
     },
     "11418": {
       "name": "サイフォスの月明かり",
-      "icon": "UI_EquipIcon_Sword_Pleroma"
+      "icon": "UI_EquipIcon_Sword_Pleroma",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 4
     },
     "11419": {
       "name": "「一心伝」名刀",
-      "icon": "UI_EquipIcon_Sword_YoutouEnchanted"
+      "icon": "UI_EquipIcon_Sword_YoutouEnchanted",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 4
     },
     "11420": {
       "name": "「一心伝」名刀",
-      "icon": "UI_EquipIcon_Sword_YoutouShattered"
+      "icon": "UI_EquipIcon_Sword_YoutouShattered",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 4
     },
     "11421": {
       "name": "「一心伝」名刀",
-      "icon": "UI_EquipIcon_Sword_YoutouEnchanted"
+      "icon": "UI_EquipIcon_Sword_YoutouEnchanted",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 4
     },
     "11422": {
       "name": "東花坊時雨",
-      "icon": "UI_EquipIcon_Sword_Kasabouzu"
+      "icon": "UI_EquipIcon_Sword_Kasabouzu",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 4
     },
     "11424": {
       "name": "狼牙",
-      "icon": "UI_EquipIcon_Sword_Boreas"
+      "icon": "UI_EquipIcon_Sword_Boreas",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 4
     },
     "11425": {
       "name": "海淵のフィナーレ",
-      "icon": "UI_EquipIcon_Sword_Vorpal"
+      "icon": "UI_EquipIcon_Sword_Vorpal",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 4
     },
     "11426": {
       "name": "サーンドルの渡し守",
-      "icon": "UI_EquipIcon_Sword_Machination"
+      "icon": "UI_EquipIcon_Sword_Machination",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 4
     },
     "11427": {
       "name": "船渠剣",
-      "icon": "UI_EquipIcon_Sword_Mechanic"
+      "icon": "UI_EquipIcon_Sword_Mechanic",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 4
     },
     "11428": {
       "name": "水仙十字の剣",
-      "icon": "UI_EquipIcon_Sword_Purewill"
+      "icon": "UI_EquipIcon_Sword_Purewill",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 4
     },
     "11429": {
       "name": "水仙十字の剣",
-      "icon": "UI_EquipIcon_Sword_Purewill"
+      "icon": "UI_EquipIcon_Sword_Purewill",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 4
     },
     "11430": {
       "name": "ストロング・ボーン",
-      "icon": "UI_EquipIcon_Sword_Umpakati"
+      "icon": "UI_EquipIcon_Sword_Umpakati",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 4
     },
     "11431": {
       "name": "エズピツァルの笛",
-      "icon": "UI_EquipIcon_Sword_Isikhulu"
+      "icon": "UI_EquipIcon_Sword_Isikhulu",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 4
     },
     "11432": {
       "name": "厄水の災い",
-      "icon": "UI_EquipIcon_Sword_SacrificialNgombe"
+      "icon": "UI_EquipIcon_Sword_SacrificialNgombe",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 4
     },
     "11433": {
       "name": "静謐の笛",
-      "icon": "UI_EquipIcon_Sword_Ilmarinen"
+      "icon": "UI_EquipIcon_Sword_Ilmarinen",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 4
     },
     "11434": {
       "name": "月紡ぎの曙光",
-      "icon": "UI_EquipIcon_Sword_Miekka"
+      "icon": "UI_EquipIcon_Sword_Miekka",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 4
     },
     "11501": {
       "name": "風鷹剣",
-      "icon": "UI_EquipIcon_Sword_Falcon"
+      "icon": "UI_EquipIcon_Sword_Falcon",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 5
     },
     "11502": {
       "name": "天空の刃",
-      "icon": "UI_EquipIcon_Sword_Dvalin"
+      "icon": "UI_EquipIcon_Sword_Dvalin",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 5
     },
     "11503": {
       "name": "蒼古なる自由への誓い",
-      "icon": "UI_EquipIcon_Sword_Widsith"
+      "icon": "UI_EquipIcon_Sword_Widsith",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 5
     },
     "11504": {
       "name": "斬山の刃",
-      "icon": "UI_EquipIcon_Sword_Kunwu"
+      "icon": "UI_EquipIcon_Sword_Kunwu",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 5
     },
     "11505": {
       "name": "磐岩結緑",
-      "icon": "UI_EquipIcon_Sword_Morax"
+      "icon": "UI_EquipIcon_Sword_Morax",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 5
     },
     "11506": {
       "name": "磐岩の緑",
-      "icon": "UI_EquipIcon_Sword_Blunt"
+      "icon": "UI_EquipIcon_Sword_Blunt",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 5
     },
     "11507": {
       "name": "虚構",
-      "icon": "UI_EquipIcon_Sword_Blunt"
+      "icon": "UI_EquipIcon_Sword_Blunt",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 5
     },
     "11509": {
       "name": "霧切の廻光",
-      "icon": "UI_EquipIcon_Sword_Narukami"
+      "icon": "UI_EquipIcon_Sword_Narukami",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 5
     },
     "11510": {
       "name": "波乱月白経津",
-      "icon": "UI_EquipIcon_Sword_Amenoma"
+      "icon": "UI_EquipIcon_Sword_Amenoma",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 5
     },
     "11511": {
       "name": "聖顕の鍵",
-      "icon": "UI_EquipIcon_Sword_Deshret"
+      "icon": "UI_EquipIcon_Sword_Deshret",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 5
     },
     "11512": {
       "name": "萃光の裁葉",
-      "icon": "UI_EquipIcon_Sword_Ayus"
+      "icon": "UI_EquipIcon_Sword_Ayus",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 5
     },
     "11513": {
       "name": "静水流転の輝き",
-      "icon": "UI_EquipIcon_Sword_Regalis"
+      "icon": "UI_EquipIcon_Sword_Regalis",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 5
     },
     "11514": {
       "name": "有楽御簾切",
-      "icon": "UI_EquipIcon_Sword_Needle"
+      "icon": "UI_EquipIcon_Sword_Needle",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 5
     },
     "11515": {
       "name": "赦罪",
-      "icon": "UI_EquipIcon_Sword_Estoc"
+      "icon": "UI_EquipIcon_Sword_Estoc",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 5
     },
     "11516": {
       "name": "岩峰を巡る歌",
-      "icon": "UI_EquipIcon_Sword_XochitlsTube"
+      "icon": "UI_EquipIcon_Sword_XochitlsTube",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 5
     },
     "11517": {
       "name": "蒼耀",
-      "icon": "UI_EquipIcon_Sword_OuterSword"
+      "icon": "UI_EquipIcon_Sword_OuterSword",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 5
     },
     "11518": {
       "name": "黒蝕",
-      "icon": "UI_EquipIcon_Sword_Motsognir"
+      "icon": "UI_EquipIcon_Sword_Motsognir",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 5
     },
     "11519": {
       "name": "三日月の含光",
-      "icon": "UI_EquipIcon_Sword_SilverwareSaw"
+      "icon": "UI_EquipIcon_Sword_SilverwareSaw",
+      "weaponType": "WEAPON_SWORD_ONE_HAND",
+      "rarity": 5
     },
     "12101": {
       "name": "訓練用大剣",
-      "icon": "UI_EquipIcon_Claymore_Aniki"
+      "icon": "UI_EquipIcon_Claymore_Aniki",
+      "weaponType": "WEAPON_CLAYMORE",
+      "rarity": 1
     },
     "12201": {
       "name": "傭兵の重剣",
-      "icon": "UI_EquipIcon_Claymore_Oyaji"
+      "icon": "UI_EquipIcon_Claymore_Oyaji",
+      "weaponType": "WEAPON_CLAYMORE",
+      "rarity": 2
     },
     "12301": {
       "name": "鉄影段平",
-      "icon": "UI_EquipIcon_Claymore_Glaive"
+      "icon": "UI_EquipIcon_Claymore_Glaive",
+      "weaponType": "WEAPON_CLAYMORE",
+      "rarity": 3
     },
     "12302": {
       "name": "龍血を浴びた剣",
-      "icon": "UI_EquipIcon_Claymore_Siegfry"
+      "icon": "UI_EquipIcon_Claymore_Siegfry",
+      "weaponType": "WEAPON_CLAYMORE",
+      "rarity": 3
     },
     "12303": {
       "name": "白鉄の大剣",
-      "icon": "UI_EquipIcon_Claymore_Tin"
+      "icon": "UI_EquipIcon_Claymore_Tin",
+      "weaponType": "WEAPON_CLAYMORE",
+      "rarity": 3
     },
     "12304": {
       "name": "石英大剣",
-      "icon": "UI_EquipIcon_Claymore_Quartz"
+      "icon": "UI_EquipIcon_Claymore_Quartz",
+      "weaponType": "WEAPON_CLAYMORE",
+      "rarity": 3
     },
     "12305": {
       "name": "理屈責め",
-      "icon": "UI_EquipIcon_Claymore_Reasoning"
+      "icon": "UI_EquipIcon_Claymore_Reasoning",
+      "weaponType": "WEAPON_CLAYMORE",
+      "rarity": 3
     },
     "12306": {
       "name": "飛天大御剣",
-      "icon": "UI_EquipIcon_Claymore_Mitsurugi"
+      "icon": "UI_EquipIcon_Claymore_Mitsurugi",
+      "weaponType": "WEAPON_CLAYMORE",
+      "rarity": 3
     },
     "12401": {
       "name": "西風大剣",
-      "icon": "UI_EquipIcon_Claymore_Zephyrus"
+      "icon": "UI_EquipIcon_Claymore_Zephyrus",
+      "weaponType": "WEAPON_CLAYMORE",
+      "rarity": 4
     },
     "12402": {
       "name": "鐘の剣",
-      "icon": "UI_EquipIcon_Claymore_Troupe"
+      "icon": "UI_EquipIcon_Claymore_Troupe",
+      "weaponType": "WEAPON_CLAYMORE",
+      "rarity": 4
     },
     "12403": {
       "name": "祭礼の大剣",
-      "icon": "UI_EquipIcon_Claymore_Fossil"
+      "icon": "UI_EquipIcon_Claymore_Fossil",
+      "weaponType": "WEAPON_CLAYMORE",
+      "rarity": 4
     },
     "12404": {
       "name": "旧貴族大剣",
-      "icon": "UI_EquipIcon_Claymore_Theocrat"
+      "icon": "UI_EquipIcon_Claymore_Theocrat",
+      "weaponType": "WEAPON_CLAYMORE",
+      "rarity": 4
     },
     "12405": {
       "name": "雨裁",
-      "icon": "UI_EquipIcon_Claymore_Perdue"
+      "icon": "UI_EquipIcon_Claymore_Perdue",
+      "weaponType": "WEAPON_CLAYMORE",
+      "rarity": 4
     },
     "12406": {
       "name": "古華·試作",
-      "icon": "UI_EquipIcon_Claymore_Proto"
+      "icon": "UI_EquipIcon_Claymore_Proto",
+      "weaponType": "WEAPON_CLAYMORE",
+      "rarity": 4
     },
     "12407": {
       "name": "白影の剣",
-      "icon": "UI_EquipIcon_Claymore_Exotic"
+      "icon": "UI_EquipIcon_Claymore_Exotic",
+      "weaponType": "WEAPON_CLAYMORE",
+      "rarity": 4
     },
     "12408": {
       "name": "黒岩の斬刀",
-      "icon": "UI_EquipIcon_Claymore_Blackrock"
+      "icon": "UI_EquipIcon_Claymore_Blackrock",
+      "weaponType": "WEAPON_CLAYMORE",
+      "rarity": 4
     },
     "12409": {
       "name": "螭龍の剣",
-      "icon": "UI_EquipIcon_Claymore_Kione"
+      "icon": "UI_EquipIcon_Claymore_Kione",
+      "weaponType": "WEAPON_CLAYMORE",
+      "rarity": 4
     },
     "12410": {
       "name": "千岩古剣",
-      "icon": "UI_EquipIcon_Claymore_Lapis"
+      "icon": "UI_EquipIcon_Claymore_Lapis",
+      "weaponType": "WEAPON_CLAYMORE",
+      "rarity": 4
     },
     "12411": {
       "name": "雪葬の星銀",
-      "icon": "UI_EquipIcon_Claymore_Dragonfell"
+      "icon": "UI_EquipIcon_Claymore_Dragonfell",
+      "weaponType": "WEAPON_CLAYMORE",
+      "rarity": 4
     },
     "12412": {
       "name": "銜玉の海皇",
-      "icon": "UI_EquipIcon_Claymore_MillenniaTuna"
+      "icon": "UI_EquipIcon_Claymore_MillenniaTuna",
+      "weaponType": "WEAPON_CLAYMORE",
+      "rarity": 4
     },
     "12414": {
       "name": "桂木斬長正",
-      "icon": "UI_EquipIcon_Claymore_Bakufu"
+      "icon": "UI_EquipIcon_Claymore_Bakufu",
+      "weaponType": "WEAPON_CLAYMORE",
+      "rarity": 4
     },
     "12415": {
       "name": "マカイラの水色",
-      "icon": "UI_EquipIcon_Claymore_Pleroma"
+      "icon": "UI_EquipIcon_Claymore_Pleroma",
+      "weaponType": "WEAPON_CLAYMORE",
+      "rarity": 4
     },
     "12416": {
       "name": "惡王丸",
-      "icon": "UI_EquipIcon_Claymore_Maria"
+      "icon": "UI_EquipIcon_Claymore_Maria",
+      "weaponType": "WEAPON_CLAYMORE",
+      "rarity": 4
     },
     "12417": {
       "name": "森林のレガリア",
-      "icon": "UI_EquipIcon_Claymore_Arakalari"
+      "icon": "UI_EquipIcon_Claymore_Arakalari",
+      "weaponType": "WEAPON_CLAYMORE",
+      "rarity": 4
     },
     "12418": {
       "name": "鉄彩の花",
-      "icon": "UI_EquipIcon_Claymore_Fleurfair"
+      "icon": "UI_EquipIcon_Claymore_Fleurfair",
+      "weaponType": "WEAPON_CLAYMORE",
+      "rarity": 4
     },
     "12424": {
       "name": "話死合い棒",
-      "icon": "UI_EquipIcon_Claymore_BeastTamer"
+      "icon": "UI_EquipIcon_Claymore_BeastTamer",
+      "weaponType": "WEAPON_CLAYMORE",
+      "rarity": 4
     },
     "12425": {
       "name": "タイダル·シャドー",
-      "icon": "UI_EquipIcon_Claymore_Vorpal"
+      "icon": "UI_EquipIcon_Claymore_Vorpal",
+      "weaponType": "WEAPON_CLAYMORE",
+      "rarity": 4
     },
     "12426": {
       "name": "「スーパーアルティメット覇王魔剣」",
-      "icon": "UI_EquipIcon_Claymore_Champion"
+      "icon": "UI_EquipIcon_Claymore_Champion",
+      "weaponType": "WEAPON_CLAYMORE",
+      "rarity": 4
     },
     "12427": {
       "name": "携帯型チェーンソー",
-      "icon": "UI_EquipIcon_Claymore_Mechanic"
+      "icon": "UI_EquipIcon_Claymore_Mechanic",
+      "weaponType": "WEAPON_CLAYMORE",
+      "rarity": 4
     },
     "12430": {
       "name": "実りの鉤鉈",
-      "icon": "UI_EquipIcon_Claymore_Umpakati"
+      "icon": "UI_EquipIcon_Claymore_Umpakati",
+      "weaponType": "WEAPON_CLAYMORE",
+      "rarity": 4
     },
     "12431": {
       "name": "アースシェイカー",
-      "icon": "UI_EquipIcon_Claymore_Isikhulu"
+      "icon": "UI_EquipIcon_Claymore_Isikhulu",
+      "weaponType": "WEAPON_CLAYMORE",
+      "rarity": 4
     },
     "12432": {
       "name": "知恵の溶炎",
-      "icon": "UI_EquipIcon_Claymore_Polilith"
+      "icon": "UI_EquipIcon_Claymore_Polilith",
+      "weaponType": "WEAPON_CLAYMORE",
+      "rarity": 4
     },
     "12433": {
       "name": "万能の鍵",
-      "icon": "UI_EquipIcon_Claymore_Ilmarinen"
+      "icon": "UI_EquipIcon_Claymore_Ilmarinen",
+      "weaponType": "WEAPON_CLAYMORE",
+      "rarity": 4
     },
     "12501": {
       "name": "天空の傲",
-      "icon": "UI_EquipIcon_Claymore_Dvalin"
+      "icon": "UI_EquipIcon_Claymore_Dvalin",
+      "weaponType": "WEAPON_CLAYMORE",
+      "rarity": 5
     },
     "12502": {
       "name": "狼の末路",
-      "icon": "UI_EquipIcon_Claymore_Wolfmound"
+      "icon": "UI_EquipIcon_Claymore_Wolfmound",
+      "weaponType": "WEAPON_CLAYMORE",
+      "rarity": 5
     },
     "12503": {
       "name": "松韻の響く頃",
-      "icon": "UI_EquipIcon_Claymore_Widsith"
+      "icon": "UI_EquipIcon_Claymore_Widsith",
+      "weaponType": "WEAPON_CLAYMORE",
+      "rarity": 5
     },
     "12504": {
       "name": "無工の剣",
-      "icon": "UI_EquipIcon_Claymore_Kunwu"
+      "icon": "UI_EquipIcon_Claymore_Kunwu",
+      "weaponType": "WEAPON_CLAYMORE",
+      "rarity": 5
     },
     "12505": {
       "name": "美玉魚",
-      "icon": "UI_EquipIcon_Claymore_Aniki"
+      "icon": "UI_EquipIcon_Claymore_Aniki",
+      "weaponType": "WEAPON_CLAYMORE",
+      "rarity": 5
     },
     "12506": {
       "name": "異史",
-      "icon": "UI_EquipIcon_Claymore_Aniki"
+      "icon": "UI_EquipIcon_Claymore_Aniki",
+      "weaponType": "WEAPON_CLAYMORE",
+      "rarity": 5
     },
     "12510": {
       "name": "赤角石塵滅砕",
-      "icon": "UI_EquipIcon_Claymore_Itadorimaru"
+      "icon": "UI_EquipIcon_Claymore_Itadorimaru",
+      "weaponType": "WEAPON_CLAYMORE",
+      "rarity": 5
     },
     "12511": {
       "name": "葦海の標",
-      "icon": "UI_EquipIcon_Claymore_Deshret"
+      "icon": "UI_EquipIcon_Claymore_Deshret",
+      "weaponType": "WEAPON_CLAYMORE",
+      "rarity": 5
     },
     "12512": {
       "name": "裁断",
-      "icon": "UI_EquipIcon_Claymore_GoldenVerdict"
+      "icon": "UI_EquipIcon_Claymore_GoldenVerdict",
+      "weaponType": "WEAPON_CLAYMORE",
+      "rarity": 5
     },
     "12513": {
       "name": "山の王の長牙",
-      "icon": "UI_EquipIcon_Claymore_EmeraldSword"
+      "icon": "UI_EquipIcon_Claymore_EmeraldSword",
+      "weaponType": "WEAPON_CLAYMORE",
+      "rarity": 5
     },
     "12514": {
       "name": "千烈の日輪",
-      "icon": "UI_EquipIcon_Claymore_RadianceSword"
+      "icon": "UI_EquipIcon_Claymore_RadianceSword",
+      "weaponType": "WEAPON_CLAYMORE",
+      "rarity": 5
     },
     "13101": {
       "name": "新米の長槍",
-      "icon": "UI_EquipIcon_Pole_Gewalt"
+      "icon": "UI_EquipIcon_Pole_Gewalt",
+      "weaponType": "WEAPON_POLE",
+      "rarity": 1
     },
     "13201": {
       "name": "鉄尖槍",
-      "icon": "UI_EquipIcon_Pole_Rod"
+      "icon": "UI_EquipIcon_Pole_Rod",
+      "weaponType": "WEAPON_POLE",
+      "rarity": 2
     },
     "13301": {
       "name": "白纓槍",
-      "icon": "UI_EquipIcon_Pole_Ruby"
+      "icon": "UI_EquipIcon_Pole_Ruby",
+      "weaponType": "WEAPON_POLE",
+      "rarity": 3
     },
     "13302": {
       "name": "鉾槍",
-      "icon": "UI_EquipIcon_Pole_Halberd"
+      "icon": "UI_EquipIcon_Pole_Halberd",
+      "weaponType": "WEAPON_POLE",
+      "rarity": 3
     },
     "13303": {
       "name": "黒纓槍",
-      "icon": "UI_EquipIcon_Pole_Noire"
+      "icon": "UI_EquipIcon_Pole_Noire",
+      "weaponType": "WEAPON_POLE",
+      "rarity": 3
     },
     "13304": {
       "name": "「旗竿」",
-      "icon": "UI_EquipIcon_Pole_Flagpole"
+      "icon": "UI_EquipIcon_Pole_Flagpole",
+      "weaponType": "WEAPON_POLE",
+      "rarity": 3
     },
     "13401": {
       "name": "匣中滅龍",
-      "icon": "UI_EquipIcon_Pole_Stardust"
+      "icon": "UI_EquipIcon_Pole_Stardust",
+      "weaponType": "WEAPON_POLE",
+      "rarity": 4
     },
     "13402": {
       "name": "星鎌·試作",
-      "icon": "UI_EquipIcon_Pole_Proto"
+      "icon": "UI_EquipIcon_Pole_Proto",
+      "weaponType": "WEAPON_POLE",
+      "rarity": 4
     },
     "13403": {
       "name": "流月の針",
-      "icon": "UI_EquipIcon_Pole_Exotic"
+      "icon": "UI_EquipIcon_Pole_Exotic",
+      "weaponType": "WEAPON_POLE",
+      "rarity": 4
     },
     "13404": {
       "name": "黒岩の突槍",
-      "icon": "UI_EquipIcon_Pole_Blackrock"
+      "icon": "UI_EquipIcon_Pole_Blackrock",
+      "weaponType": "WEAPON_POLE",
+      "rarity": 4
     },
     "13405": {
       "name": "死闘の槍",
-      "icon": "UI_EquipIcon_Pole_Gladiator"
+      "icon": "UI_EquipIcon_Pole_Gladiator",
+      "weaponType": "WEAPON_POLE",
+      "rarity": 4
     },
     "13406": {
       "name": "千岩長槍",
-      "icon": "UI_EquipIcon_Pole_Lapis"
+      "icon": "UI_EquipIcon_Pole_Lapis",
+      "weaponType": "WEAPON_POLE",
+      "rarity": 4
     },
     "13407": {
       "name": "西風長槍",
-      "icon": "UI_EquipIcon_Pole_Zephyrus"
+      "icon": "UI_EquipIcon_Pole_Zephyrus",
+      "weaponType": "WEAPON_POLE",
+      "rarity": 4
     },
     "13408": {
       "name": "旧貴族猟槍",
-      "icon": "UI_EquipIcon_Pole_Theocrat"
+      "icon": "UI_EquipIcon_Pole_Theocrat",
+      "weaponType": "WEAPON_POLE",
+      "rarity": 4
     },
     "13409": {
       "name": "ドラゴンスピア",
-      "icon": "UI_EquipIcon_Pole_Everfrost"
+      "icon": "UI_EquipIcon_Pole_Everfrost",
+      "weaponType": "WEAPON_POLE",
+      "rarity": 4
     },
     "13414": {
       "name": "喜多院十文字槍",
-      "icon": "UI_EquipIcon_Pole_Bakufu"
+      "icon": "UI_EquipIcon_Pole_Bakufu",
+      "weaponType": "WEAPON_POLE",
+      "rarity": 4
     },
     "13415": {
       "name": "「漁獲」",
-      "icon": "UI_EquipIcon_Pole_Mori"
+      "icon": "UI_EquipIcon_Pole_Mori",
+      "weaponType": "WEAPON_POLE",
+      "rarity": 4
     },
     "13416": {
       "name": "斬波のひれ長",
-      "icon": "UI_EquipIcon_Pole_Maria"
+      "icon": "UI_EquipIcon_Pole_Maria",
+      "weaponType": "WEAPON_POLE",
+      "rarity": 4
     },
     "13417": {
       "name": "ムーンピアサー",
-      "icon": "UI_EquipIcon_Pole_Arakalari"
+      "icon": "UI_EquipIcon_Pole_Arakalari",
+      "weaponType": "WEAPON_POLE",
+      "rarity": 4
     },
     "13419": {
       "name": "風信の矛",
-      "icon": "UI_EquipIcon_Pole_Windvane"
+      "icon": "UI_EquipIcon_Pole_Windvane",
+      "weaponType": "WEAPON_POLE",
+      "rarity": 4
     },
     "13424": {
       "name": "フィヨルドの歌",
-      "icon": "UI_EquipIcon_Pole_Shanty"
+      "icon": "UI_EquipIcon_Pole_Shanty",
+      "weaponType": "WEAPON_POLE",
+      "rarity": 4
     },
     "13425": {
       "name": "正義の報酬",
-      "icon": "UI_EquipIcon_Pole_Vorpal"
+      "icon": "UI_EquipIcon_Pole_Vorpal",
+      "weaponType": "WEAPON_POLE",
+      "rarity": 4
     },
     "13426": {
       "name": "砂中の賢者達の問答",
-      "icon": "UI_EquipIcon_Pole_Caduceus"
+      "icon": "UI_EquipIcon_Pole_Caduceus",
+      "weaponType": "WEAPON_POLE",
+      "rarity": 4
     },
     "13427": {
       "name": "プロスペクタードリル",
-      "icon": "UI_EquipIcon_Pole_Mechanic"
+      "icon": "UI_EquipIcon_Pole_Mechanic",
+      "weaponType": "WEAPON_POLE",
+      "rarity": 4
     },
     "13430": {
       "name": "鎮山の釘",
-      "icon": "UI_EquipIcon_Pole_Umpakati"
+      "icon": "UI_EquipIcon_Pole_Umpakati",
+      "weaponType": "WEAPON_POLE",
+      "rarity": 4
     },
     "13431": {
       "name": "虹の行方",
-      "icon": "UI_EquipIcon_Pole_Isikhulu"
+      "icon": "UI_EquipIcon_Pole_Isikhulu",
+      "weaponType": "WEAPON_POLE",
+      "rarity": 4
     },
     "13432": {
       "name": "玉響停の御噺",
-      "icon": "UI_EquipIcon_Pole_Aoandon"
+      "icon": "UI_EquipIcon_Pole_Aoandon",
+      "weaponType": "WEAPON_POLE",
+      "rarity": 4
     },
     "13433": {
       "name": "金掘りのシャベル",
-      "icon": "UI_EquipIcon_Pole_Ilmarinen"
+      "icon": "UI_EquipIcon_Pole_Ilmarinen",
+      "weaponType": "WEAPON_POLE",
+      "rarity": 4
     },
     "13434": {
       "name": "聖祭者の輝杖",
-      "icon": "UI_EquipIcon_Pole_Krivule"
+      "icon": "UI_EquipIcon_Pole_Krivule",
+      "weaponType": "WEAPON_POLE",
+      "rarity": 4
     },
     "13501": {
       "name": "護摩の杖",
-      "icon": "UI_EquipIcon_Pole_Homa"
+      "icon": "UI_EquipIcon_Pole_Homa",
+      "weaponType": "WEAPON_POLE",
+      "rarity": 5
     },
     "13502": {
       "name": "天空の脊",
-      "icon": "UI_EquipIcon_Pole_Dvalin"
+      "icon": "UI_EquipIcon_Pole_Dvalin",
+      "weaponType": "WEAPON_POLE",
+      "rarity": 5
     },
     "13504": {
       "name": "破天の槍",
-      "icon": "UI_EquipIcon_Pole_Kunwu"
+      "icon": "UI_EquipIcon_Pole_Kunwu",
+      "weaponType": "WEAPON_POLE",
+      "rarity": 5
     },
     "13505": {
       "name": "和璞鳶",
-      "icon": "UI_EquipIcon_Pole_Morax"
+      "icon": "UI_EquipIcon_Pole_Morax",
+      "weaponType": "WEAPON_POLE",
+      "rarity": 5
     },
     "13506": {
       "name": "レジサイド",
-      "icon": "UI_EquipIcon_Pole_Gewalt"
+      "icon": "UI_EquipIcon_Pole_Gewalt",
+      "weaponType": "WEAPON_POLE",
+      "rarity": 5
     },
     "13507": {
       "name": "息災",
-      "icon": "UI_EquipIcon_Pole_Santika"
+      "icon": "UI_EquipIcon_Pole_Santika",
+      "weaponType": "WEAPON_POLE",
+      "rarity": 5
     },
     "13509": {
       "name": "草薙の稲光",
-      "icon": "UI_EquipIcon_Pole_Narukami"
+      "icon": "UI_EquipIcon_Pole_Narukami",
+      "weaponType": "WEAPON_POLE",
+      "rarity": 5
     },
     "13511": {
       "name": "赤砂の杖",
-      "icon": "UI_EquipIcon_Pole_Deshret"
+      "icon": "UI_EquipIcon_Pole_Deshret",
+      "weaponType": "WEAPON_POLE",
+      "rarity": 5
     },
     "13512": {
       "name": "赤月のシルエット",
-      "icon": "UI_EquipIcon_Pole_BloodMoon"
+      "icon": "UI_EquipIcon_Pole_BloodMoon",
+      "weaponType": "WEAPON_POLE",
+      "rarity": 5
     },
     "13513": {
       "name": "ルミドゥースの挽歌",
-      "icon": "UI_EquipIcon_Pole_Muguet"
+      "icon": "UI_EquipIcon_Pole_Muguet",
+      "weaponType": "WEAPON_POLE",
+      "rarity": 5
     },
     "13514": {
       "name": "香りのシンフォニスト",
-      "icon": "UI_EquipIcon_Pole_Trident"
+      "icon": "UI_EquipIcon_Pole_Trident",
+      "weaponType": "WEAPON_POLE",
+      "rarity": 5
     },
     "13515": {
       "name": "砕け散る光輪",
-      "icon": "UI_EquipIcon_Pole_Perdix"
+      "icon": "UI_EquipIcon_Pole_Perdix",
+      "weaponType": "WEAPON_POLE",
+      "rarity": 5
     },
     "13516": {
       "name": "血染めの荒れ地",
-      "icon": "UI_EquipIcon_Pole_TummaLyhty"
+      "icon": "UI_EquipIcon_Pole_TummaLyhty",
+      "weaponType": "WEAPON_POLE",
+      "rarity": 5
     },
     "14101": {
       "name": "生徒ノート",
-      "icon": "UI_EquipIcon_Catalyst_Apprentice"
+      "icon": "UI_EquipIcon_Catalyst_Apprentice",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 1
     },
     "14201": {
       "name": "ポケット魔導書",
-      "icon": "UI_EquipIcon_Catalyst_Pocket"
+      "icon": "UI_EquipIcon_Catalyst_Pocket",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 2
     },
     "14301": {
       "name": "魔導緒論",
-      "icon": "UI_EquipIcon_Catalyst_Intro"
+      "icon": "UI_EquipIcon_Catalyst_Intro",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 3
     },
     "14302": {
       "name": "龍殺しの英傑譚",
-      "icon": "UI_EquipIcon_Catalyst_Pulpfic"
+      "icon": "UI_EquipIcon_Catalyst_Pulpfic",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 3
     },
     "14303": {
       "name": "異世界旅行記",
-      "icon": "UI_EquipIcon_Catalyst_Lightnov"
+      "icon": "UI_EquipIcon_Catalyst_Lightnov",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 3
     },
     "14304": {
       "name": "翡玉法珠",
-      "icon": "UI_EquipIcon_Catalyst_Jade"
+      "icon": "UI_EquipIcon_Catalyst_Jade",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 3
     },
     "14305": {
       "name": "特級の宝玉",
-      "icon": "UI_EquipIcon_Catalyst_Phoney"
+      "icon": "UI_EquipIcon_Catalyst_Phoney",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 3
     },
     "14306": {
       "name": "琥珀の玥",
-      "icon": "UI_EquipIcon_Catalyst_Amber"
+      "icon": "UI_EquipIcon_Catalyst_Amber",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 3
     },
     "14401": {
       "name": "西風秘典",
-      "icon": "UI_EquipIcon_Catalyst_Zephyrus"
+      "icon": "UI_EquipIcon_Catalyst_Zephyrus",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 4
     },
     "14402": {
       "name": "流浪楽章",
-      "icon": "UI_EquipIcon_Catalyst_Troupe"
+      "icon": "UI_EquipIcon_Catalyst_Troupe",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 4
     },
     "14403": {
       "name": "祭礼の断片",
-      "icon": "UI_EquipIcon_Catalyst_Fossil"
+      "icon": "UI_EquipIcon_Catalyst_Fossil",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 4
     },
     "14404": {
       "name": "旧貴族秘法録",
-      "icon": "UI_EquipIcon_Catalyst_Theocrat"
+      "icon": "UI_EquipIcon_Catalyst_Theocrat",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 4
     },
     "14405": {
       "name": "匣中日月",
-      "icon": "UI_EquipIcon_Catalyst_Resurrection"
+      "icon": "UI_EquipIcon_Catalyst_Resurrection",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 4
     },
     "14406": {
       "name": "金珀·試作",
-      "icon": "UI_EquipIcon_Catalyst_Proto"
+      "icon": "UI_EquipIcon_Catalyst_Proto",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 4
     },
     "14407": {
       "name": "万国諸海の図譜",
-      "icon": "UI_EquipIcon_Catalyst_Exotic"
+      "icon": "UI_EquipIcon_Catalyst_Exotic",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 4
     },
     "14408": {
       "name": "黒岩の緋玉",
-      "icon": "UI_EquipIcon_Catalyst_Blackrock"
+      "icon": "UI_EquipIcon_Catalyst_Blackrock",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 4
     },
     "14409": {
       "name": "昭心",
-      "icon": "UI_EquipIcon_Catalyst_Truelens"
+      "icon": "UI_EquipIcon_Catalyst_Truelens",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 4
     },
     "14410": {
       "name": "ダークアレイの酒と詩",
-      "icon": "UI_EquipIcon_Catalyst_Outlaw"
+      "icon": "UI_EquipIcon_Catalyst_Outlaw",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 4
     },
     "14412": {
       "name": "冬忍びの実",
-      "icon": "UI_EquipIcon_Catalyst_Everfrost"
+      "icon": "UI_EquipIcon_Catalyst_Everfrost",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 4
     },
     "14413": {
       "name": "ドドコの物語",
-      "icon": "UI_EquipIcon_Catalyst_Ludiharpastum"
+      "icon": "UI_EquipIcon_Catalyst_Ludiharpastum",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 4
     },
     "14414": {
       "name": "白辰の輪",
-      "icon": "UI_EquipIcon_Catalyst_Bakufu"
+      "icon": "UI_EquipIcon_Catalyst_Bakufu",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 4
     },
     "14415": {
       "name": "誓いの明瞳",
-      "icon": "UI_EquipIcon_Catalyst_Jyanome"
+      "icon": "UI_EquipIcon_Catalyst_Jyanome",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 4
     },
     "14416": {
       "name": "彷徨える星",
-      "icon": "UI_EquipIcon_Catalyst_Pleroma"
+      "icon": "UI_EquipIcon_Catalyst_Pleroma",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 4
     },
     "14417": {
       "name": "満悦の実",
-      "icon": "UI_EquipIcon_Catalyst_Arakalari"
+      "icon": "UI_EquipIcon_Catalyst_Arakalari",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 4
     },
     "14424": {
       "name": "古祠の瓏",
-      "icon": "UI_EquipIcon_Catalyst_Yue"
+      "icon": "UI_EquipIcon_Catalyst_Yue",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 4
     },
     "14425": {
       "name": "純水流華",
-      "icon": "UI_EquipIcon_Catalyst_Vorpal"
+      "icon": "UI_EquipIcon_Catalyst_Vorpal",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 4
     },
     "14426": {
       "name": "果てなき紺碧の唄",
-      "icon": "UI_EquipIcon_Catalyst_DandelionPoem"
+      "icon": "UI_EquipIcon_Catalyst_DandelionPoem",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 4
     },
     "14427": {
       "name": "蒼紋の角杯",
-      "icon": "UI_EquipIcon_Catalyst_ConchSprayer"
+      "icon": "UI_EquipIcon_Catalyst_ConchSprayer",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 4
     },
     "14430": {
       "name": "波乗りの旋回",
-      "icon": "UI_EquipIcon_Catalyst_Umpakati"
+      "icon": "UI_EquipIcon_Catalyst_Umpakati",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 4
     },
     "14431": {
       "name": "ヤシュチェの環",
-      "icon": "UI_EquipIcon_Catalyst_Isikhulu"
+      "icon": "UI_EquipIcon_Catalyst_Isikhulu",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 4
     },
     "14432": {
       "name": "天光のリュート",
-      "icon": "UI_EquipIcon_Catalyst_SeeliesLute"
+      "icon": "UI_EquipIcon_Catalyst_SeeliesLute",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 4
     },
     "14433": {
       "name": "烏髄の孤灯",
-      "icon": "UI_EquipIcon_Catalyst_Ilmarinen"
+      "icon": "UI_EquipIcon_Catalyst_Ilmarinen",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 4
     },
     "14434": {
       "name": "霜辰",
-      "icon": "UI_EquipIcon_Catalyst_Ziedas"
+      "icon": "UI_EquipIcon_Catalyst_Ziedas",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 4
     },
     "14501": {
       "name": "天空の巻",
-      "icon": "UI_EquipIcon_Catalyst_Dvalin"
+      "icon": "UI_EquipIcon_Catalyst_Dvalin",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 5
     },
     "14502": {
       "name": "四風原典",
-      "icon": "UI_EquipIcon_Catalyst_Fourwinds"
+      "icon": "UI_EquipIcon_Catalyst_Fourwinds",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 5
     },
     "14503": {
       "name": "散逸した叙事詩",
-      "icon": "UI_EquipIcon_Catalyst_Apprentice"
+      "icon": "UI_EquipIcon_Catalyst_Apprentice",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 5
     },
     "14504": {
       "name": "浮世の錠",
-      "icon": "UI_EquipIcon_Catalyst_Kunwu"
+      "icon": "UI_EquipIcon_Catalyst_Kunwu",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 5
     },
     "14505": {
       "name": "碧落の瓏",
-      "icon": "UI_EquipIcon_Catalyst_Morax"
+      "icon": "UI_EquipIcon_Catalyst_Morax",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 5
     },
     "14506": {
       "name": "不滅の月華",
-      "icon": "UI_EquipIcon_Catalyst_Kaleido"
+      "icon": "UI_EquipIcon_Catalyst_Kaleido",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 5
     },
     "14509": {
       "name": "神楽の真意",
-      "icon": "UI_EquipIcon_Catalyst_Narukami"
+      "icon": "UI_EquipIcon_Catalyst_Narukami",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 5
     },
     "14511": {
       "name": "千夜に浮かぶ夢",
-      "icon": "UI_EquipIcon_Catalyst_Ayus"
+      "icon": "UI_EquipIcon_Catalyst_Ayus",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 5
     },
     "14512": {
       "name": "トゥライトゥーラの記憶",
-      "icon": "UI_EquipIcon_Catalyst_Alaya"
+      "icon": "UI_EquipIcon_Catalyst_Alaya",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 5
     },
     "14513": {
       "name": "凛流の監視者",
-      "icon": "UI_EquipIcon_Catalyst_Wheatley"
+      "icon": "UI_EquipIcon_Catalyst_Wheatley",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 5
     },
     "14514": {
       "name": "久遠流転の大典",
-      "icon": "UI_EquipIcon_Catalyst_Iudex"
+      "icon": "UI_EquipIcon_Catalyst_Iudex",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 5
     },
     "14515": {
       "name": "鶴鳴の余韻",
-      "icon": "UI_EquipIcon_Catalyst_MountainGale"
+      "icon": "UI_EquipIcon_Catalyst_MountainGale",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 5
     },
     "14516": {
       "name": "サーフィンタイム",
-      "icon": "UI_EquipIcon_Catalyst_MechaPufferfish"
+      "icon": "UI_EquipIcon_Catalyst_MechaPufferfish",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 5
     },
     "14517": {
       "name": "祭星者の眺め",
-      "icon": "UI_EquipIcon_Catalyst_Figurines"
+      "icon": "UI_EquipIcon_Catalyst_Figurines",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 5
     },
     "14518": {
       "name": "寝正月の初晴",
-      "icon": "UI_EquipIcon_Catalyst_SakuraFan"
+      "icon": "UI_EquipIcon_Catalyst_SakuraFan",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 5
     },
     "14519": {
       "name": "ヴィヴィッド・ハート",
-      "icon": "UI_EquipIcon_Catalyst_VaresaTransformer"
+      "icon": "UI_EquipIcon_Catalyst_VaresaTransformer",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 5
     },
     "14520": {
       "name": "夜を紡ぐ天鏡",
-      "icon": "UI_EquipIcon_Catalyst_MenulisRing"
+      "icon": "UI_EquipIcon_Catalyst_MenulisRing",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 5
     },
     "14521": {
       "name": "真言の匣",
-      "icon": "UI_EquipIcon_Catalyst_Sistrum"
+      "icon": "UI_EquipIcon_Catalyst_Sistrum",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 5
     },
     "14522": {
       "name": "帳の夜曲",
-      "icon": "UI_EquipIcon_Catalyst_Brisingamen"
+      "icon": "UI_EquipIcon_Catalyst_Brisingamen",
+      "weaponType": "WEAPON_CATALYST",
+      "rarity": 5
     },
     "15101": {
       "name": "狩猟弓",
-      "icon": "UI_EquipIcon_Bow_Hunters"
+      "icon": "UI_EquipIcon_Bow_Hunters",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 1
     },
     "15201": {
       "name": "歴戦の狩猟弓",
-      "icon": "UI_EquipIcon_Bow_Old"
+      "icon": "UI_EquipIcon_Bow_Old",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 2
     },
     "15301": {
       "name": "鴉羽の弓",
-      "icon": "UI_EquipIcon_Bow_Crowfeather"
+      "icon": "UI_EquipIcon_Bow_Crowfeather",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 3
     },
     "15302": {
       "name": "シャープシューターの誓い",
-      "icon": "UI_EquipIcon_Bow_Arjuna"
+      "icon": "UI_EquipIcon_Bow_Arjuna",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 3
     },
     "15303": {
       "name": "リカーブボウ",
-      "icon": "UI_EquipIcon_Bow_Curve"
+      "icon": "UI_EquipIcon_Bow_Curve",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 3
     },
     "15304": {
       "name": "弾弓",
-      "icon": "UI_EquipIcon_Bow_Sling"
+      "icon": "UI_EquipIcon_Bow_Sling",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 3
     },
     "15305": {
       "name": "文使い",
-      "icon": "UI_EquipIcon_Bow_Msg"
+      "icon": "UI_EquipIcon_Bow_Msg",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 3
     },
     "15306": {
       "name": "黒檀の弓",
-      "icon": "UI_EquipIcon_Bow_Hardwood"
+      "icon": "UI_EquipIcon_Bow_Hardwood",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 3
     },
     "15401": {
       "name": "西風猟弓",
-      "icon": "UI_EquipIcon_Bow_Zephyrus"
+      "icon": "UI_EquipIcon_Bow_Zephyrus",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 4
     },
     "15402": {
       "name": "絶弦",
-      "icon": "UI_EquipIcon_Bow_Troupe"
+      "icon": "UI_EquipIcon_Bow_Troupe",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 4
     },
     "15403": {
       "name": "祭礼の弓",
-      "icon": "UI_EquipIcon_Bow_Fossil"
+      "icon": "UI_EquipIcon_Bow_Fossil",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 4
     },
     "15404": {
       "name": "旧貴族長弓",
-      "icon": "UI_EquipIcon_Bow_Theocrat"
+      "icon": "UI_EquipIcon_Bow_Theocrat",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 4
     },
     "15405": {
       "name": "弓蔵",
-      "icon": "UI_EquipIcon_Bow_Recluse"
+      "icon": "UI_EquipIcon_Bow_Recluse",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 4
     },
     "15406": {
       "name": "澹月·試作",
-      "icon": "UI_EquipIcon_Bow_Proto"
+      "icon": "UI_EquipIcon_Bow_Proto",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 4
     },
     "15407": {
       "name": "リングボウ",
-      "icon": "UI_EquipIcon_Bow_Exotic"
+      "icon": "UI_EquipIcon_Bow_Exotic",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 4
     },
     "15408": {
       "name": "黒岩の戦弓",
-      "icon": "UI_EquipIcon_Bow_Blackrock"
+      "icon": "UI_EquipIcon_Bow_Blackrock",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 4
     },
     "15409": {
       "name": "蒼翠の狩猟弓",
-      "icon": "UI_EquipIcon_Bow_Viridescent"
+      "icon": "UI_EquipIcon_Bow_Viridescent",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 4
     },
     "15410": {
       "name": "ダークアレイの狩人",
-      "icon": "UI_EquipIcon_Bow_Outlaw"
+      "icon": "UI_EquipIcon_Bow_Outlaw",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 4
     },
     "15411": {
       "name": "落霞",
-      "icon": "UI_EquipIcon_Bow_Fallensun"
+      "icon": "UI_EquipIcon_Bow_Fallensun",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 4
     },
     "15412": {
       "name": "幽夜のワルツ",
-      "icon": "UI_EquipIcon_Bow_Nachtblind"
+      "icon": "UI_EquipIcon_Bow_Nachtblind",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 4
     },
     "15413": {
       "name": "風花の頌歌",
-      "icon": "UI_EquipIcon_Bow_Fleurfair"
+      "icon": "UI_EquipIcon_Bow_Fleurfair",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 4
     },
     "15414": {
       "name": "破魔の弓",
-      "icon": "UI_EquipIcon_Bow_Bakufu"
+      "icon": "UI_EquipIcon_Bow_Bakufu",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 4
     },
     "15415": {
       "name": "プレデター",
-      "icon": "UI_EquipIcon_Bow_Predator"
+      "icon": "UI_EquipIcon_Bow_Predator",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 4
     },
     "15416": {
       "name": "曚雲の月",
-      "icon": "UI_EquipIcon_Bow_Maria"
+      "icon": "UI_EquipIcon_Bow_Maria",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 4
     },
     "15417": {
       "name": "王の近侍",
-      "icon": "UI_EquipIcon_Bow_Arakalari"
+      "icon": "UI_EquipIcon_Bow_Arakalari",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 4
     },
     "15418": {
       "name": "竭沢",
-      "icon": "UI_EquipIcon_Bow_Fin"
+      "icon": "UI_EquipIcon_Bow_Fin",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 4
     },
     "15419": {
       "name": "トキの嘴",
-      "icon": "UI_EquipIcon_Bow_Ibis"
+      "icon": "UI_EquipIcon_Bow_Ibis",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 4
     },
     "15424": {
       "name": "烈日の後嗣",
-      "icon": "UI_EquipIcon_Bow_Gurabad"
+      "icon": "UI_EquipIcon_Bow_Gurabad",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 4
     },
     "15425": {
       "name": "静寂の唄",
-      "icon": "UI_EquipIcon_Bow_Vorpal"
+      "icon": "UI_EquipIcon_Bow_Vorpal",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 4
     },
     "15426": {
       "name": "築雲",
-      "icon": "UI_EquipIcon_Bow_Ultimatum"
+      "icon": "UI_EquipIcon_Bow_Ultimatum",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 4
     },
     "15427": {
       "name": "レンジゲージ",
-      "icon": "UI_EquipIcon_Bow_Mechanic"
+      "icon": "UI_EquipIcon_Bow_Mechanic",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 4
     },
     "15430": {
       "name": "花飾りの羽",
-      "icon": "UI_EquipIcon_Bow_Umpakati"
+      "icon": "UI_EquipIcon_Bow_Umpakati",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 4
     },
     "15431": {
       "name": "チェーンブレイカー",
-      "icon": "UI_EquipIcon_Bow_Isikhulu"
+      "icon": "UI_EquipIcon_Bow_Isikhulu",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 4
     },
     "15432": {
       "name": "冷寂の音",
-      "icon": "UI_EquipIcon_Bow_Stinger"
+      "icon": "UI_EquipIcon_Bow_Stinger",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 4
     },
     "15433": {
       "name": "羅網の針",
-      "icon": "UI_EquipIcon_Bow_Ilmarinen"
+      "icon": "UI_EquipIcon_Bow_Ilmarinen",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 4
     },
     "15434": {
       "name": "虹蛇の雨弦",
-      "icon": "UI_EquipIcon_Bow_ElegguaBow"
+      "icon": "UI_EquipIcon_Bow_ElegguaBow",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 4
     },
     "15501": {
       "name": "天空の翼",
-      "icon": "UI_EquipIcon_Bow_Dvalin"
+      "icon": "UI_EquipIcon_Bow_Dvalin",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 5
     },
     "15502": {
       "name": "アモスの弓",
-      "icon": "UI_EquipIcon_Bow_Amos"
+      "icon": "UI_EquipIcon_Bow_Amos",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 5
     },
     "15503": {
       "name": "終焉を嘆く詩",
-      "icon": "UI_EquipIcon_Bow_Widsith"
+      "icon": "UI_EquipIcon_Bow_Widsith",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 5
     },
     "15504": {
       "name": "昆吾の堕龍",
-      "icon": "UI_EquipIcon_Bow_Hunters"
+      "icon": "UI_EquipIcon_Bow_Hunters",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 5
     },
     "15505": {
       "name": "高価なオーブ",
-      "icon": "UI_EquipIcon_Bow_Hunters"
+      "icon": "UI_EquipIcon_Bow_Hunters",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 5
     },
     "15506": {
       "name": "壊れた鏡",
-      "icon": "UI_EquipIcon_Bow_Hunters"
+      "icon": "UI_EquipIcon_Bow_Hunters",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 5
     },
     "15507": {
       "name": "冬極の白星",
-      "icon": "UI_EquipIcon_Bow_Worldbane"
+      "icon": "UI_EquipIcon_Bow_Worldbane",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 5
     },
     "15508": {
       "name": "若水",
-      "icon": "UI_EquipIcon_Bow_Kirin"
+      "icon": "UI_EquipIcon_Bow_Kirin",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 5
     },
     "15509": {
       "name": "飛雷の鳴弦",
-      "icon": "UI_EquipIcon_Bow_Narukami"
+      "icon": "UI_EquipIcon_Bow_Narukami",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 5
     },
     "15511": {
       "name": "狩人の道",
-      "icon": "UI_EquipIcon_Bow_Ayus"
+      "icon": "UI_EquipIcon_Bow_Ayus",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 5
     },
     "15512": {
       "name": "始まりの大魔術",
-      "icon": "UI_EquipIcon_Bow_Pledge"
+      "icon": "UI_EquipIcon_Bow_Pledge",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 5
     },
     "15513": {
       "name": "白雨心弦",
-      "icon": "UI_EquipIcon_Bow_Arcdange"
+      "icon": "UI_EquipIcon_Bow_Arcdange",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 5
     },
     "15514": {
       "name": "星鷲の紅き羽",
-      "icon": "UI_EquipIcon_Bow_Qoyllorsnova"
+      "icon": "UI_EquipIcon_Bow_Qoyllorsnova",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 5
     },
     "15515": {
       "name": "暁を告げる歴史",
-      "icon": "UI_EquipIcon_Bow_Arianna"
+      "icon": "UI_EquipIcon_Bow_Arianna",
+      "weaponType": "WEAPON_BOW",
+      "rarity": 5
     }
   },
   "artifacts": {
@@ -12199,7 +12842,7 @@
       "setId": 10002
     },
     "52532": {
-      "name": "勇���の冠",
+      "name": "勇士の冠",
       "icon": "UI_RelicIcon_10002_3",
       "setId": 10002
     },
@@ -14249,7 +14892,7 @@
       "setId": 10006
     },
     "56152": {
-      "name": "武人���水時計",
+      "name": "武人の水時計",
       "icon": "UI_RelicIcon_10006_5",
       "setId": 10006
     },
@@ -21119,7 +21762,7 @@
       "setId": 15003
     },
     "77451": {
-      "name": "フィナーレの時計",
+      "name": "フィナ���レの時計",
       "icon": "UI_RelicIcon_15003_5",
       "setId": 15003
     },
@@ -26394,8 +27037,8 @@
     "15010": "水祭りの人",
     "15011": "雷祭りの人",
     "15012": "風祭りの人",
-    "15013": "氷祭りの人",
-    "15014": "悠久の磐岩",
+    "15013": "氷祭りの��",
+    "15014": "悠久の磐���",
     "15015": "逆飛びの流星",
     "15016": "沈淪の心",
     "15017": "千岩牢固",

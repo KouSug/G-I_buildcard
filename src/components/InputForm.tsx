@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
+import { ChevronDown, Check, Star } from "lucide-react";
 import { BuildData, Character, Weapon, Stats, Artifact, EnkaNetworkResponse, AvatarInfo } from "@/types";
 import gameDataRaw from "@/data/gameData.json";
 import rarityDataRaw from "@/data/rarityData.json";
@@ -8,14 +9,22 @@ import { statMap, formatStatValue } from "@/utils/mappings";
 
 // Type assertion for gameData to avoid implicit any errors if strict mode is on
 const gameData = gameDataRaw as unknown as {
-    characters: { [key: string]: { name: string; icon: string; sideIcon: string; element?: string; constellations?: string[]; skills?: { [key: string]: { id: number; icon?: string; proudSkillGroupId?: number } } } };
-    weapons: { [key: string]: { name: string; icon: string } };
+    characters: { [key: string]: { name: string; icon: string; sideIcon: string; element?: string; weaponType?: string; constellations?: string[]; skills?: { [key: string]: { id: number; icon?: string; proudSkillGroupId?: number } } } };
+    weapons: { [key: string]: { name: string; icon: string; weaponType?: string; rarity?: number } };
     artifacts: { [key: string]: { name: string; icon: string; setId: number } };
     artifactSets: { [key: string]: string };
 };
 
 // Type assertion for rarityData
 const rarityData = rarityDataRaw as { [key: string]: string };
+
+const slotLabels: { [key: string]: string } = {
+    flower: "生の花",
+    plume: "死の羽",
+    sands: "時の砂",
+    goblet: "空の杯",
+    circlet: "理の冠"
+};
 
 interface InputFormProps {
     data: BuildData;
@@ -41,6 +50,35 @@ export const InputForm: React.FC<InputFormProps> = ({ data, onChange }) => {
     const [error, setError] = useState<string | null>(null);
     const [enkaData, setEnkaData] = useState<EnkaNetworkResponse | null>(null);
     const [isComposing, setIsComposing] = useState(false);
+
+    // Character Dropdown State
+    const [charDropdownOpen, setCharDropdownOpen] = useState(false);
+    const charDropdownRef = useRef<HTMLDivElement>(null);
+
+    // Weapon Dropdown State
+    const [weaponDropdownOpen, setWeaponDropdownOpen] = useState(false);
+    const weaponDropdownRef = useRef<HTMLDivElement>(null);
+
+    // Artifact Set Dropdown State
+    const [openSetIndex, setOpenSetIndex] = useState<number | null>(null);
+    const setDropdownRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+    // Close dropdowns when clicking outside
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (charDropdownRef.current && !charDropdownRef.current.contains(event.target as Node)) {
+                setCharDropdownOpen(false);
+            }
+            if (weaponDropdownRef.current && !weaponDropdownRef.current.contains(event.target as Node)) {
+                setWeaponDropdownOpen(false);
+            }
+            if (openSetIndex !== null && setDropdownRefs.current[openSetIndex] && !setDropdownRefs.current[openSetIndex]?.contains(event.target as Node)) {
+                setOpenSetIndex(null);
+            }
+        };
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => document.removeEventListener("mousedown", handleClickOutside);
+    }, [openSetIndex]);
 
     const fetchEnkaData = async () => {
         if (!uid) return;
@@ -191,6 +229,7 @@ export const InputForm: React.FC<InputFormProps> = ({ data, onChange }) => {
                             set: (artifactData?.setId && gameData.artifactSets[artifactData.setId]) || artifactData?.name || "Unknown",
                             level: item.reliquary?.level ? item.reliquary.level - 1 : 0,
                             imageUrl: artifactData?.icon ? `https://enka.network/ui/${artifactData.icon}.png` : undefined,
+                            rarity: item.flat.rankLevel || 5,
                             mainStat: {
                                 label: mainStat ? (statMap[mainStat.mainPropId] || mainStat.mainPropId) : "Main",
                                 value: mainStat ? formatStatValue(mainStat.mainPropId, mainStat.statValue) : "0"
@@ -232,7 +271,7 @@ export const InputForm: React.FC<InputFormProps> = ({ data, onChange }) => {
         <div className="flex flex-col gap-6 p-4 bg-[#1C1C22] text-white rounded-lg border border-[#3A3A45]">
             {/* API Import Section */}
             <section>
-                <h3 className="text-xl font-bold mb-4 text-[#D4AF37] border-b border-[#3A3A45] pb-2">Import from Enka.Network</h3>
+                <h3 className="text-xl font-bold mb-4 text-[#D4AF37] border-b border-[#3A3A45] pb-2">Enka.Networkからインポート</h3>
                 <div className="flex gap-2 items-end mb-4">
                     <Input
                         label="UID"
@@ -259,14 +298,14 @@ export const InputForm: React.FC<InputFormProps> = ({ data, onChange }) => {
                                 .replace(/[^a-zA-Z0-9]/g, '');
                             setUid(cleaned);
                         }}
-                        placeholder="Enter UID (Alphanumeric)"
+                        placeholder="UIDを入力 (半角英数字)"
                     />
                     <button
                         onClick={fetchEnkaData}
                         disabled={loading}
                         className="bg-[#D4AF37] text-black font-bold py-1 px-4 rounded h-[30px] hover:bg-[#E5C158] disabled:opacity-50 transition-colors text-sm"
                     >
-                        {loading ? "Fetching..." : "Fetch Data"}
+                        {loading ? "取得中..." : "データ取得"}
                     </button>
                 </div>
                 {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
@@ -274,8 +313,8 @@ export const InputForm: React.FC<InputFormProps> = ({ data, onChange }) => {
                 {/* Character Selection Grid */}
                 {enkaData && enkaData.avatarInfoList && (
                     <div className="mt-4">
-                        <p className="text-sm text-gray-400 mb-2">Select Character:</p>
-                        <div className="grid grid-cols-12 gap-1">
+                        <p className="text-sm text-gray-400 mb-2">キャラクターを選択:</p>
+                        <div className="grid grid-cols-6 gap-2">
                             {enkaData.avatarInfoList.map((avatar) => {
                                 const charInfo = gameData.characters[String(avatar.avatarId)];
                                 const isSelected = data.character.name === charInfo?.name;
@@ -312,61 +351,152 @@ export const InputForm: React.FC<InputFormProps> = ({ data, onChange }) => {
 
             {/* Character Section */}
             <section>
-                <h3 className="text-xl font-bold mb-4 text-[#D4AF37] border-b border-[#3A3A45] pb-2">Character Info</h3>
+                <h3 className="text-xl font-bold mb-4 text-[#D4AF37] border-b border-[#3A3A45] pb-2">キャラクター情報</h3>
                 <div className="grid grid-cols-2 gap-4">
                     <div className="flex flex-col gap-1">
-                        <label className="text-xs text-gray-400">Name</label>
-                        <input
-                            list="character-names"
-                            type="text"
-                            value={data.character.name}
-                            onChange={(e) => {
-                                const name = e.target.value;
-                                const charEntry = Object.values(gameData.characters).find(c => c.name === name);
+                        <label className="text-xs text-gray-400">名前</label>
+                        <div className="relative" ref={charDropdownRef}>
+                            <div className="relative">
+                                <input
+                                    type="text"
+                                    value={data.character.name}
+                                    onFocus={() => setCharDropdownOpen(true)}
+                                    onChange={(e) => {
+                                        const name = e.target.value;
+                                        setCharDropdownOpen(true);
 
-                                let newCharacter = { ...data.character, name };
+                                        const charEntry = Object.values(gameData.characters).find(c => c.name === name);
+                                        let newCharacter = { ...data.character, name };
 
-                                if (charEntry) {
-                                    if (charEntry.element) {
-                                        newCharacter.element = charEntry.element as any;
-                                    }
-                                    if (charEntry.icon) {
-                                        newCharacter.imageUrl = `https://enka.network/ui/${charEntry.icon.replace("UI_AvatarIcon_", "UI_Gacha_AvatarImg_")}.png`;
-                                    }
-                                    if (charEntry.constellations) {
-                                        newCharacter.constellationIcons = charEntry.constellations.map(icon => `https://enka.network/ui/${icon}.png`);
-                                    }
-                                }
+                                        if (charEntry) {
+                                            if (charEntry.element) {
+                                                newCharacter.element = charEntry.element as any;
+                                            }
+                                            if (charEntry.icon) {
+                                                newCharacter.imageUrl = `https://enka.network/ui/${charEntry.icon.replace("UI_AvatarIcon_", "UI_Gacha_AvatarImg_")}.png`;
+                                            }
+                                            if (charEntry.constellations) {
+                                                newCharacter.constellationIcons = charEntry.constellations.map(icon => `https://enka.network/ui/${icon}.png`);
+                                            }
+                                        }
 
-                                onChange({ ...data, character: newCharacter });
-                            }}
-                            className="bg-[#15151A] border border-[#3A3A45] rounded px-2 py-1 text-sm focus:border-[#D4AF37] outline-none transition-colors"
-                        />
-                        <datalist id="character-names">
-                            {Object.values(gameData.characters)
-                                .sort((a, b) => a.name.localeCompare(b.name, 'ja'))
-                                .map((char) => (
-                                    <option key={char.name} value={char.name} />
-                                ))
-                            }
-                        </datalist>
+                                        onChange({ ...data, character: newCharacter });
+                                    }}
+                                    className="w-full bg-[#15151A] border border-[#3A3A45] rounded px-2 py-1 text-sm focus:border-[#D4AF37] outline-none transition-colors pr-8"
+                                />
+                                <button
+                                    type="button"
+                                    className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white"
+                                    onClick={() => setCharDropdownOpen(!charDropdownOpen)}
+                                >
+                                    <ChevronDown size={16} />
+                                </button>
+                            </div>
+
+                            {charDropdownOpen && (
+                                <ul className="absolute z-50 left-0 right-0 top-full mt-1 max-h-60 overflow-y-auto bg-[#1C1C22] border border-[#3A3A45] rounded shadow-lg">
+                                    {(() => {
+                                        const sortedChars = Object.values(gameData.characters).sort((a, b) => a.name.localeCompare(b.name, 'ja'));
+                                        const isExactMatch = sortedChars.some(c => c.name === data.character.name);
+                                        const filteredChars = (data.character.name && !isExactMatch)
+                                            ? sortedChars.filter(c => c.name.toLowerCase().includes(data.character.name.toLowerCase()))
+                                            : sortedChars;
+
+                                        if (filteredChars.length === 0) {
+                                            return <li className="px-3 py-2 text-sm text-gray-500">結果なし</li>;
+                                        }
+
+                                        return filteredChars.map((char) => (
+                                            <li
+                                                key={char.name}
+                                                className={`px-3 py-2 text-sm cursor-pointer hover:bg-[#3A3A45] flex items-center justify-between ${char.name === data.character.name ? "text-[#D4AF37]" : "text-gray-200"}`}
+                                                onClick={() => {
+                                                    const charEntry = char;
+                                                    let newCharacter = { ...data.character, name: char.name };
+
+                                                    if (charEntry.element) {
+                                                        newCharacter.element = charEntry.element as any;
+                                                    }
+                                                    if (charEntry.icon) {
+                                                        newCharacter.imageUrl = `https://enka.network/ui/${charEntry.icon.replace("UI_AvatarIcon_", "UI_Gacha_AvatarImg_")}.png`;
+                                                    }
+                                                    if (charEntry.constellations) {
+                                                        newCharacter.constellationIcons = charEntry.constellations.map(icon => `https://enka.network/ui/${icon}.png`);
+                                                    }
+
+                                                    onChange({ ...data, character: newCharacter });
+                                                    setCharDropdownOpen(false);
+                                                }}
+                                            >
+                                                <span>{char.name}</span>
+                                                {char.name === data.character.name && <Check size={14} />}
+                                            </li>
+                                        ));
+                                    })()}
+                                </ul>
+                            )}
+                        </div>
                     </div>
-                    <Input label="Level" type="number" value={data.character.level} onChange={(v) => updateCharacter("level", parseInt(v))} />
-                    <Input label="Constellation" type="number" value={data.character.constellation} onChange={(v) => updateCharacter("constellation", parseInt(v))} />
+                    <Input label="レベル" type="number" value={data.character.level} onChange={(v) => updateCharacter("level", parseInt(v))} />
                     <div className="flex flex-col gap-1">
-                        <label className="text-xs text-gray-400">Element</label>
+                        <label className="text-xs text-gray-400">命の星座 (凸)</label>
+                        <div className="flex gap-2">
+                            {Array.from({ length: 6 }).map((_, i) => {
+                                const isOpen = i < data.character.constellation;
+
+                                // Look up icon dynamically from gameData
+                                const currentChar = Object.values(gameData.characters).find(c => c.name === data.character.name);
+                                const iconId = currentChar?.constellations?.[i];
+                                const iconUrl = iconId ? `https://enka.network/ui/${iconId}.png` : data.character.constellationIcons?.[i];
+
+                                return (
+                                    <button
+                                        key={i}
+                                        onClick={() => {
+                                            const newLevel = data.character.constellation === i + 1 ? 0 : i + 1;
+                                            updateCharacter("constellation", newLevel);
+                                        }}
+                                        className={`
+                                            w-10 h-10 rounded-full border-2 flex items-center justify-center overflow-hidden transition-all relative
+                                            ${isOpen
+                                                ? "border-[#D4AF37] opacity-100"
+                                                : "border-[#3A3A45] opacity-40 grayscale hover:opacity-70"
+                                            }
+                                        `}
+                                        title={`Constellation ${i + 1}`}
+                                    >
+                                        <div className={`absolute inset-0 bg-[#1C1C22] ${isOpen ? "bg-opacity-0" : "bg-opacity-60"} z-10 transition-all`} />
+                                        {iconUrl ? (
+                                            <img
+                                                src={iconUrl}
+                                                alt={`C${i + 1}`}
+                                                className="w-full h-full object-cover"
+                                                onError={(e) => e.currentTarget.style.display = 'none'}
+                                            />
+                                        ) : (
+                                            <span className="text-xs font-bold text-gray-500 z-20 relative">{i + 1}</span>
+                                        )}
+                                        {/* Overlay for active state glow/tint if needed */}
+                                        {isOpen && <div className="absolute inset-0 bg-[#D4AF37] opacity-10 mix-blend-overlay z-20 pointer-events-none" />}
+                                    </button>
+                                );
+                            })}
+                        </div>
+                    </div>
+                    <div className="flex flex-col gap-1">
+                        <label className="text-xs text-gray-400">元素</label>
                         <select
                             value={data.character.element}
                             onChange={(e) => updateCharacter("element", e.target.value as any)}
                             className="bg-[#15151A] border border-[#3A3A45] rounded px-2 py-1 text-sm focus:border-[#D4AF37] outline-none transition-colors h-[30px]"
                         >
-                            <option value="pyro">Pyro (炎)</option>
-                            <option value="hydro">Hydro (水)</option>
-                            <option value="anemo">Anemo (風)</option>
-                            <option value="electro">Electro (雷)</option>
-                            <option value="dendro">Dendro (草)</option>
-                            <option value="cryo">Cryo (氷)</option>
-                            <option value="geo">Geo (岩)</option>
+                            <option value="pyro">炎</option>
+                            <option value="hydro">水</option>
+                            <option value="anemo">風</option>
+                            <option value="electro">雷</option>
+                            <option value="dendro">草</option>
+                            <option value="cryo">氷</option>
+                            <option value="geo">岩</option>
                         </select>
                     </div>
 
@@ -375,35 +505,106 @@ export const InputForm: React.FC<InputFormProps> = ({ data, onChange }) => {
 
             {/* Weapon Section */}
             <section>
-                <h3 className="text-xl font-bold mb-4 text-[#D4AF37] border-b border-[#3A3A45] pb-2">Weapon Info</h3>
+                <h3 className="text-xl font-bold mb-4 text-[#D4AF37] border-b border-[#3A3A45] pb-2">武器情報</h3>
                 <div className="grid grid-cols-2 gap-4">
-                    <Input label="Weapon Name" value={data.weapon.name} onChange={(v) => updateWeapon("name", v)} />
-                    <Input label="Level" type="number" value={data.weapon.level} onChange={(v) => updateWeapon("level", parseInt(v))} />
-                    <Input label="Refinement" type="number" value={data.weapon.refinement} onChange={(v) => updateWeapon("refinement", parseInt(v))} />
+                    <div className="flex flex-col gap-1">
+                        <label className="text-xs text-gray-400">武器名</label>
+                        <div className="relative" ref={weaponDropdownRef}>
+                            <div className="relative">
+                                <input
+                                    type="text"
+                                    value={data.weapon.name}
+                                    onFocus={() => setWeaponDropdownOpen(true)}
+                                    onChange={(e) => {
+                                        updateWeapon("name", e.target.value);
+                                        setWeaponDropdownOpen(true);
+                                    }}
+                                    className="w-full bg-[#15151A] border border-[#3A3A45] rounded px-2 py-1 text-sm focus:border-[#D4AF37] outline-none transition-colors pr-8"
+                                />
+                                <button
+                                    type="button"
+                                    className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white"
+                                    onClick={() => setWeaponDropdownOpen(!weaponDropdownOpen)}
+                                >
+                                    <ChevronDown size={16} />
+                                </button>
+                            </div>
+
+                            {weaponDropdownOpen && (
+                                <ul className="absolute z-50 left-0 right-0 top-full mt-1 max-h-60 overflow-y-auto bg-[#1C1C22] border border-[#3A3A45] rounded shadow-lg">
+                                    {(() => {
+                                        // 1. Get current character's weapon type
+                                        const currentCharEntry = Object.values(gameData.characters).find(c => c.name === data.character.name);
+                                        const targetWeaponType = currentCharEntry?.weaponType;
+
+                                        // 2. Filter weapons
+                                        const sortedWeapons = Object.values(gameData.weapons)
+                                            .filter(w => !targetWeaponType || w.weaponType === targetWeaponType) // Filter if type is known
+                                            .sort((a, b) => {
+                                                const rarityA = a.rarity || 0;
+                                                const rarityB = b.rarity || 0;
+                                                if (rarityA !== rarityB) {
+                                                    return rarityB - rarityA; // Descending rarity
+                                                }
+                                                return a.name.localeCompare(b.name, 'ja');
+                                            });
+
+                                        const isExactMatch = sortedWeapons.some(w => w.name === data.weapon.name);
+                                        const filteredWeapons = (data.weapon.name && !isExactMatch)
+                                            ? sortedWeapons.filter(w => w.name.toLowerCase().includes(data.weapon.name.toLowerCase()))
+                                            : sortedWeapons;
+
+                                        if (filteredWeapons.length === 0) {
+                                            return <li className="px-3 py-2 text-sm text-gray-500">結果なし</li>;
+                                        }
+
+                                        return filteredWeapons.map((weapon) => (
+                                            <li
+                                                key={weapon.name}
+                                                className={`px-3 py-2 text-sm cursor-pointer hover:bg-[#3A3A45] flex items-center justify-between ${weapon.name === data.weapon.name ? "text-[#D4AF37]" : "text-gray-200"}`}
+                                                onClick={() => {
+                                                    updateWeapon("name", weapon.name);
+                                                    if (weapon.icon) {
+                                                        updateWeapon("imageUrl", `https://enka.network/ui/${weapon.icon}.png`);
+                                                    }
+                                                    setWeaponDropdownOpen(false);
+                                                }}
+                                            >
+                                                <span>{weapon.name}</span>
+                                                {weapon.name === data.weapon.name && <Check size={14} />}
+                                            </li>
+                                        ));
+                                    })()}
+                                </ul>
+                            )}
+                        </div>
+                    </div>
+                    <Input label="レベル" type="number" value={data.weapon.level} onChange={(v) => updateWeapon("level", parseInt(v))} />
+                    <Input label="精錬ランク" type="number" value={data.weapon.refinement} onChange={(v) => updateWeapon("refinement", parseInt(v))} />
 
                 </div>
             </section>
 
             {/* Stats Section */}
             <section>
-                <h3 className="text-xl font-bold mb-4 text-[#D4AF37] border-b border-[#3A3A45] pb-2">Stats</h3>
+                <h3 className="text-xl font-bold mb-4 text-[#D4AF37] border-b border-[#3A3A45] pb-2">ステータス</h3>
                 <div className="grid grid-cols-2 gap-4">
-                    <Input label="Max HP" type="number" value={data.stats.hp} onChange={(v) => updateStats("hp", parseInt(v))} />
-                    <Input label="ATK" type="number" value={data.stats.atk} onChange={(v) => updateStats("atk", parseInt(v))} />
-                    <Input label="DEF" type="number" value={data.stats.def} onChange={(v) => updateStats("def", parseInt(v))} />
-                    <Input label="EM" type="number" value={data.stats.em} onChange={(v) => updateStats("em", parseInt(v))} />
-                    <Input label="Crit Rate %" type="number" value={data.stats.cr} onChange={(v) => updateStats("cr", parseFloat(v))} />
-                    <Input label="Crit DMG %" type="number" value={data.stats.cd} onChange={(v) => updateStats("cd", parseFloat(v))} />
-                    <Input label="ER %" type="number" value={data.stats.er} onChange={(v) => updateStats("er", parseFloat(v))} />
-                    <Input label="Dmg Bonus %" type="number" value={data.stats.dmgBonus} onChange={(v) => updateStats("dmgBonus", parseFloat(v))} />
+                    <Input label="HP上限" type="number" value={data.stats.hp} onChange={(v) => updateStats("hp", parseInt(v))} />
+                    <Input label="攻撃力" type="number" value={data.stats.atk} onChange={(v) => updateStats("atk", parseInt(v))} />
+                    <Input label="防御力" type="number" value={data.stats.def} onChange={(v) => updateStats("def", parseInt(v))} />
+                    <Input label="元素熟知" type="number" value={data.stats.em} onChange={(v) => updateStats("em", parseInt(v))} />
+                    <Input label="会心率 %" type="number" value={data.stats.cr} onChange={(v) => updateStats("cr", parseFloat(v))} />
+                    <Input label="会心ダメージ %" type="number" value={data.stats.cd} onChange={(v) => updateStats("cd", parseFloat(v))} />
+                    <Input label="元素チャージ効率 %" type="number" value={data.stats.er} onChange={(v) => updateStats("er", parseFloat(v))} />
+                    <Input label="ダメージバフ %" type="number" value={data.stats.dmgBonus} onChange={(v) => updateStats("dmgBonus", parseFloat(v))} />
                 </div>
             </section>
 
             {/* Score Settings */}
             <section>
-                <h3 className="text-xl font-bold mb-4 text-[#D4AF37] border-b border-[#3A3A45] pb-2">Score Settings</h3>
+                <h3 className="text-xl font-bold mb-4 text-[#D4AF37] border-b border-[#3A3A45] pb-2">聖遺物スコア計算設定</h3>
                 <div className="flex flex-col gap-2">
-                    <label className="text-xs text-gray-400">Score Base Stat</label>
+                    <label className="text-xs text-gray-400">基準ステータス</label>
                     <div className="flex flex-wrap gap-2">
                         {[
                             { value: 'atk', label: '攻撃力' },
@@ -437,35 +638,111 @@ export const InputForm: React.FC<InputFormProps> = ({ data, onChange }) => {
 
             {/* Artifacts Section */}
             <section>
-                <h3 className="text-xl font-bold mb-4 text-[#D4AF37] border-b border-[#3A3A45] pb-2">Artifacts</h3>
+                <h3 className="text-xl font-bold mb-4 text-[#D4AF37] border-b border-[#3A3A45] pb-2">聖遺物</h3>
                 <div className="flex flex-col gap-6">
                     {data.artifacts.map((artifact, index) => (
                         <div key={index} className="p-4 bg-[#15151A] rounded border border-[#3A3A45]">
-                            <h4 className="font-bold mb-3 text-[#D4AF37] capitalize">{artifact.slot}</h4>
+                            <h4 className="font-bold mb-3 text-[#D4AF37]">{slotLabels[artifact.slot] || artifact.slot}</h4>
                             <div className="grid grid-cols-2 gap-4">
-                                <Input label="Set Name" value={artifact.set} onChange={(v) => {
-                                    const newArtifacts = [...data.artifacts];
-                                    newArtifacts[index] = { ...artifact, set: v };
-                                    onChange({ ...data, artifacts: newArtifacts });
-                                }} />
-                                <Input label="Level" type="number" value={artifact.level} onChange={(v) => {
+                                <div className="flex flex-col gap-1">
+                                    <label className="text-xs text-gray-400">セット名</label>
+                                    <div className="relative" ref={el => { setDropdownRefs.current[index] = el; }}>
+                                        <div className="relative">
+                                            <input
+                                                type="text"
+                                                value={artifact.set}
+                                                onFocus={() => setOpenSetIndex(index)}
+                                                onChange={(e) => {
+                                                    const newArtifacts = [...data.artifacts];
+                                                    newArtifacts[index] = { ...artifact, set: e.target.value };
+                                                    onChange({ ...data, artifacts: newArtifacts });
+                                                    setOpenSetIndex(index);
+                                                }}
+                                                className="w-full bg-[#1C1C22] border border-[#3A3A45] rounded px-2 py-1 text-sm focus:border-[#D4AF37] outline-none transition-colors pr-8"
+                                            />
+                                            <button
+                                                type="button"
+                                                className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white"
+                                                onClick={() => setOpenSetIndex(openSetIndex === index ? null : index)}
+                                            >
+                                                <ChevronDown size={14} />
+                                            </button>
+                                        </div>
+
+                                        {openSetIndex === index && (
+                                            <ul className="absolute z-50 left-0 right-0 top-full mt-1 max-h-48 overflow-y-auto bg-[#1C1C22] border border-[#3A3A45] rounded shadow-lg">
+                                                {(() => {
+                                                    const allSets = Array.from(new Set(Object.values(gameData.artifactSets))).sort((a, b) => a.localeCompare(b, 'ja'));
+                                                    const isExactMatch = allSets.includes(artifact.set);
+                                                    const filteredSets = (artifact.set && !isExactMatch)
+                                                        ? allSets.filter(s => s.toLowerCase().includes(artifact.set.toLowerCase()))
+                                                        : allSets;
+
+                                                    if (filteredSets.length === 0) {
+                                                        return <li className="px-3 py-2 text-sm text-gray-500">結果なし</li>;
+                                                    }
+
+                                                    return filteredSets.map((setName) => (
+                                                        <li
+                                                            key={setName}
+                                                            className={`px-3 py-2 text-xs cursor-pointer hover:bg-[#3A3A45] flex items-center justify-between ${setName === artifact.set ? "text-[#D4AF37]" : "text-gray-200"}`}
+                                                            onClick={() => {
+                                                                const newArtifacts = [...data.artifacts];
+                                                                newArtifacts[index] = { ...artifact, set: setName };
+                                                                onChange({ ...data, artifacts: newArtifacts });
+                                                                setOpenSetIndex(null);
+                                                            }}
+                                                        >
+                                                            <span>{setName}</span>
+                                                            {setName === artifact.set && <Check size={12} />}
+                                                        </li>
+                                                    ));
+                                                })()}
+                                            </ul>
+                                        )}
+                                    </div>
+                                </div>
+                                <div className="flex flex-col gap-1">
+                                    <label className="text-xs text-gray-400">レア度</label>
+                                    <div className="flex gap-1 h-[30px] items-center">
+                                        {[1, 2, 3, 4, 5].map((star) => (
+                                            <button
+                                                key={star}
+                                                type="button"
+                                                onClick={() => {
+                                                    const newArtifacts = [...data.artifacts];
+                                                    newArtifacts[index] = { ...artifact, rarity: star };
+                                                    onChange({ ...data, artifacts: newArtifacts });
+                                                }}
+                                                className="transition-transform hover:scale-110 focus:outline-none"
+                                            >
+                                                <Star
+                                                    size={16}
+                                                    fill={star <= (artifact.rarity || 5) ? "#D4AF37" : "none"}
+                                                    color={star <= (artifact.rarity || 5) ? "#D4AF37" : "#4A4A55"}
+                                                />
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
+                                <Input label="レベル" type="number" value={artifact.level} onChange={(v) => {
                                     const newArtifacts = [...data.artifacts];
                                     newArtifacts[index] = { ...artifact, level: parseInt(v) };
                                     onChange({ ...data, artifacts: newArtifacts });
                                 }} />
-                                <Input label="Main Stat" value={artifact.mainStat.label} onChange={(v) => {
+                                <Input label="メイン効果" value={artifact.mainStat.label} onChange={(v) => {
                                     const newArtifacts = [...data.artifacts];
                                     newArtifacts[index] = { ...artifact, mainStat: { ...artifact.mainStat, label: v } };
                                     onChange({ ...data, artifacts: newArtifacts });
                                 }} />
-                                <Input label="Main Value" value={artifact.mainStat.value} onChange={(v) => {
+                                <Input label="メイン値" value={artifact.mainStat.value} onChange={(v) => {
                                     const newArtifacts = [...data.artifacts];
                                     newArtifacts[index] = { ...artifact, mainStat: { ...artifact.mainStat, value: v } };
                                     onChange({ ...data, artifacts: newArtifacts });
                                 }} />
                             </div>
                             <div className="mt-4">
-                                <label className="text-xs text-gray-400 mb-2 block">Sub Stats</label>
+                                <label className="text-xs text-gray-400 mb-2 block">サブステータス</label>
                                 <div className="grid grid-cols-2 gap-2">
                                     {artifact.subStats.map((sub, subIdx) => (
                                         <div key={subIdx} className="flex gap-1">

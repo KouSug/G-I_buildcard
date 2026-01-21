@@ -4,6 +4,15 @@ import React from "react";
 import { BuildData } from "@/types";
 import { Sword, Shield, Heart, Zap, Star, Sparkles } from "lucide-react";
 import { calculateArtifactScore, getArtifactRank, getTotalScoreRank } from "@/utils/score";
+import gameDataRaw from "@/data/gameData.json";
+
+// Type assertion for gameData
+const gameData = gameDataRaw as unknown as {
+    characters: { [key: string]: { name: string; icon: string; sideIcon: string; element?: string; constellations?: string[]; skills?: { [key: string]: { id: number; icon?: string; proudSkillGroupId?: number } } } };
+    weapons: { [key: string]: { name: string; icon: string; rarity?: number } };
+    artifacts: { [key: string]: { name: string; icon: string; setId: number } };
+    artifactSets: { [key: string]: string };
+};
 
 interface BuildCardProps {
     data: BuildData;
@@ -88,7 +97,7 @@ export const BuildCard: React.FC<BuildCardProps> = ({ data, id }) => {
 
             <div className="flex flex-col w-full h-full gap-1.5 relative z-10">
                 {/* Top Section: Character, Stats, Weapon */}
-                <div className="flex w-full h-[60%]">
+                <div className="flex w-full h-[56%]">
                     {/* Left: Character Image & Basic Info */}
                     <div className="relative flex-grow h-full overflow-hidden group rounded-lg">
                         {/* Placeholder for Character Image */}
@@ -197,11 +206,38 @@ export const BuildCard: React.FC<BuildCardProps> = ({ data, id }) => {
                         {/* Artifact Sets */}
                         <div className="flex-grow bg-[#15151A]/60 rounded-lg border border-[#3A3A45]/50 flex flex-col items-center justify-center gap-1 p-2">
                             {activeSets.length > 0 ? (
-                                activeSets.map(([setName, count], idx) => (
-                                    <div key={idx} className="text-[#9ca3af] text-xs font-bold font-[family-name:var(--font-sawarabi)]">
-                                        {setName} <span className="text-[#eab308] font-[family-name:var(--font-inter)]">({count})</span>
-                                    </div>
-                                ))
+                                activeSets.map(([setName, count], idx) => {
+                                    // Find icon for this set (prefer flower)
+                                    let setIcon = "";
+                                    const setId = Object.keys(gameData.artifactSets).find(key => gameData.artifactSets[key] === setName);
+
+                                    if (setId) {
+                                        // Try to find a flower artifact for this set
+                                        const flowerArtifact = Object.values(gameData.artifacts).find(a => a.setId === parseInt(setId) && a.icon.endsWith("_4"));
+                                        if (flowerArtifact) {
+                                            setIcon = `https://enka.network/ui/${flowerArtifact.icon}.png`;
+                                        } else {
+                                            // Fallback to any artifact in this set
+                                            const anyArtifact = Object.values(gameData.artifacts).find(a => a.setId === parseInt(setId));
+                                            if (anyArtifact) {
+                                                setIcon = `https://enka.network/ui/${anyArtifact.icon}.png`;
+                                            }
+                                        }
+                                    }
+
+                                    return (
+                                        <div key={idx} className="flex items-center gap-1">
+                                            {setIcon && (
+                                                <div className="w-8 h-8 flex items-center justify-center">
+                                                    <img src={setIcon} alt={setName} className="w-full h-full object-contain drop-shadow-md" crossOrigin="anonymous" />
+                                                </div>
+                                            )}
+                                            <div className="text-white text-xs font-bold font-[family-name:var(--font-sawarabi)]">
+                                                {setName} <span className="text-[#eab308] font-[family-name:var(--font-inter)]">({count})</span>
+                                            </div>
+                                        </div>
+                                    );
+                                })
                             ) : (
                                 <span className="text-[#9ca3af] text-xs opacity-50">No Set Bonus</span>
                             )}
@@ -237,12 +273,12 @@ export const BuildCard: React.FC<BuildCardProps> = ({ data, id }) => {
                 </div>
 
                 {/* Bottom Section: Artifacts */}
-                <div className="grid grid-cols-5 gap-2 w-full h-[38%]">
+                <div className="grid grid-cols-5 gap-2 w-full h-[42%]">
                     {artifacts.map((artifact, idx) => {
                         const score = calculateArtifactScore(artifact, data.scoreBase);
                         const rank = getArtifactRank(score, artifact.slot);
                         return (
-                            <div key={idx} className="bg-[#15151A]/30 rounded border border-[#3A3A45]/50 p-2 flex flex-col gap-1 relative group min-h-0">
+                            <div key={idx} className="bg-[#15151A]/60 rounded border border-[#3A3A45]/50 p-2 flex flex-col gap-1 relative group min-h-0">
                                 {/* Icon Background */}
                                 <div className="absolute top-[-10%] left-[-10%] w-24 h-24 scale-90 opacity-70 pointer-events-none z-0">
                                     {artifact.imageUrl ? (
@@ -256,11 +292,17 @@ export const BuildCard: React.FC<BuildCardProps> = ({ data, id }) => {
                                         </div>
                                     )}
                                 </div>
+
                                 {/* Header: Main Stat */}
-                                <div className="flex items-center justify-end border-b border-[#3A3A45]/50 pb-1 mb-0.5 relative z-10">
+                                {/* Header: Main Stat */}
+                                <div className="flex items-center justify-end pb-1 mb-0.5 relative z-10">
                                     <div className="flex flex-col items-end">
                                         <span className="text-xs font-bold text-[#D4AF37] truncate leading-tight font-[family-name:var(--font-sawarabi)]">{artifact.mainStat.label}</span>
                                         <span className="text-[20px] font-bold leading-none font-[family-name:var(--font-inter)]">{artifact.mainStat.value}</span>
+                                        <span className={`text-[10px] font-bold mt-0.5 font-[family-name:var(--font-inter)] ${artifact.level === 20 ? "text-[#FFD700]" : "text-[#9ca3af]"
+                                            }`}>
+                                            +{artifact.level}
+                                        </span>
                                     </div>
                                 </div>
 
@@ -338,7 +380,7 @@ const TalentDisplay = ({ talent }: { talent: { level: number, boosted: boolean, 
         <div className="w-7 h-7 rounded-full bg-[#15151A]/80 border border-[#3A3A45]/50 flex items-center justify-center overflow-hidden p-1">
             {talent.icon && <img src={talent.icon} className="w-full h-full object-cover rounded-full" crossOrigin="anonymous" />}
         </div>
-        <span className={`text-[9px] font-bold font-[family-name:var(--font-inter)] ${talent.boosted ? "text-[#22d3ee]" : "text-white"}`}>
+        <span className={`text-[9px] font-bold font-[family-name:var(--font-inter)] ${talent.boosted ? "text-[#FFD700]" : "text-white"}`}>
             Lv.{talent.level}
         </span>
     </div>

@@ -77,6 +77,7 @@ const main = async () => {
             const iconName = avatar.iconName;
             const sideIconName = avatar.sideIconName;
             const skillDepotId = avatar.skillDepotId;
+            const weaponType = avatar.weaponType; // Add weaponType
 
             if (name && (String(id).startsWith('1000') || String(id).startsWith('1100'))) {
                 const depot = skillDepotMap[skillDepotId];
@@ -134,7 +135,8 @@ const main = async () => {
                     sideIcon: sideIconName,
                     skills: skills,
                     constellations: constellations,
-                    element: element
+                    element: element,
+                    weaponType: weaponType // Save weaponType
                 };
             }
         });
@@ -147,11 +149,15 @@ const main = async () => {
             const nameHash = weapon.nameTextMapHash;
             const name = textMap[nameHash];
             const icon = weapon.icon;
+            const weaponType = weapon.weaponType; // Add weaponType
+            const rarity = weapon.rankLevel; // Add rarity
 
             if (name) {
                 gameData.weapons[id] = {
                     name: name,
-                    icon: icon
+                    icon: icon,
+                    weaponType: weaponType, // Save weaponType
+                    rarity: rarity // Save rarity
                 };
             }
         });
